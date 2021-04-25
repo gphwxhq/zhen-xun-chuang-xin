@@ -1,0 +1,39 @@
+/**index.wxss**/
+
+.searchBlock{
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+.searchInput{
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+  /* height: 68rpx; */
+  -webkit-overflow-scrolling: touch;
+  background: #aaa;
+  border-radius: 32rpx;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.tbody{
+  position: relative;
+  background-color: gray;
+  width: 100%;
+  height: 1500rpx;
+}
+
+#submitBtn{
+  position: relative;
+  background: rgb(0, 0, 0);
+  color: white;
+  height: 60rpx;
+  width: 20%;
+  font-size: 21rpx;
+  border-radius: 32rpx;
+}
+#searchInput{
+  font-size: 24rpx;
+  color: #fff;
+  display:inline-block;
+}
