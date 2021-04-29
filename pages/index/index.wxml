@@ -12,13 +12,18 @@
   </form>
 </view>
   <view class="tbody">
-    <view class='text_container' wx:if="{{!search_state}}">查询中</view>
-    <view class='text_container' wx:if="{{!isfind&&search_state&&!firstState}}">未找到结果</view>
-    <block wx:if="{{isfind&&search_state}}">
-      <view class='text_container'>姓名：{{name}}</view>
-      <view class='text_container'>工作单位：{{dep}}</view>
-      <view class='text_container'>其他：{{oth}}</view>
-    </block>
+    <view class='text_container'>
+      <view>testinfo</view>
+      <view>testinfo2</view>
+      <view wx:if="{{!search_state}}">查询中</view>
+      <view wx:if="{{!isfind&&search_state&&!firstState}}">未找到结果</view>
+      <block wx:if="{{isfind&&search_state}}">
+        <view>姓名：{{name}}</view>
+        <view>工作单位：{{dep}}</view>
+        <view>其他：{{oth}}</view>
+      </block>
+    </view>
+    
   </view>
   
   

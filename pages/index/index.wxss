@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   background-color: rgb(255, 255, 255);
+  /* margin-bottom: 20rpx; */
 }
 .searchInput{
   position: relative;
@@ -18,9 +19,17 @@
 }
 .tbody{
   position: relative;
-  background-color: gray;
-  width: 100%;
+  background-color: rgb(194, 194, 194);
+  width:100%;
+  padding-top:10rpx;
   height: 1500rpx;
+}
+.text_container{
+  border-radius: 20rpx;
+  background-color: rgb(255, 255, 255);
+  margin-left: 10rpx;
+  margin-right:10rpx;
+  /* height: 500rpx; */
 }
 
 #submitBtn{
