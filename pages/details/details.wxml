@@ -1,0 +1,49 @@
+<!--pages/details/details.wxml-->
+<image class="image" src="/pages/images/267f9e2f070828381f3074c5dbd3be014c086f065b85.jpg"></image>
+<view class="con_list">
+  <view class="list">
+      <view class="txt_list">姓名：{{name}}</view>
+  </view>
+  <view class="list">
+      <view class="txt_list">性别: {{sex}}</view>
+  </view>
+</view>
+<view class="con_list">
+  <view class="list">
+      <view class="txt_list">民族：{{nation}}</view>
+  </view>
+  <view class="list">
+      <view class="txt_list">学历：{{doctor}}</view>
+  </view>
+</view>
+<view class="con_list">
+  <view class="list">
+      <view class="txt_list">年龄：{{age}}</view>
+  </view>
+  <view class="list">
+      <view class="txt_list">专业代码：{{sub_id}}</view>
+  </view>
+</view>
+<view class="test">联系方式：{{telephone_num}}</view>
+<view class="test">研究方向：{{otherinformation}}</view>
+<view class="test">id:{{id}}</view>
+<view class="con_list">
+  <view class="list">
+    <button bindtap="getSubject1" type="primary">项目经历</button>
+  </view>
+  <view class="list">
+    <button bindtap="getSubject2" type="primary">职位信息</button>
+  </view>
+<!-- </view> -->
+<!-- <view class="con_list"> -->
+  <view class="list">
+    <button bindtap="getSubject3" type="primary">论文及专利</button>
+  </view>
+  <view class="list">
+    <button bindtap="getSubject4" type="primary">其他信息</button>
+  </view>
+</view>
+<view class="test">{{subject1[0]}}</view>
+<view class="test">{{subject1[1]}}</view>
+<view class="test">{{subject1[2]}}</view>
+<view class="test">{{subject1[3]}}</view>

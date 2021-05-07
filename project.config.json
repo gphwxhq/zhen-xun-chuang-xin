@@ -43,7 +43,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.15.0",
   "appid": "wxa7f43d2930aa2600",
-  "projectname": "test",
+  "projectname": "test1",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -54,6 +54,8 @@
   },
   "isGameTourist": false,
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []

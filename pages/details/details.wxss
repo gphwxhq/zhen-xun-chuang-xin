@@ -1,0 +1,36 @@
+/* pages/details/details.wxss */
+page{
+  background:#cccccc
+}
+.image{
+  width: 350rpx;
+}
+.information_l{
+  color:black;
+  text-align: right;
+  word-spacing:20px;
+  width: 350rpx;
+}
+.information_r{
+  color:black;
+  text-align: right;
+  width: 350rpx;
+  
+}
+
+.test
+{
+  margin-top: 20rpx;
+}
+.con_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.con_list .list{
+  width: 50%;  /*width:50%;每行显示两列，width:33.3%;每行显示三列*/
+  height: auto;
+  text-align: left;
+  margin-top: 20rpx;
+}

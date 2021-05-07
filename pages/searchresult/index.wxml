@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<page>
+  <view>
+    <form bindsubmit='searchBox'>
+      <view class="searchBlock">
+        <view class="searchInput">
+          <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
+          <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名"></input>
+        </view>
+        <button id="submitBtn" form-type="submit" disabled="{{!search_state}}">{{!search_state?'查询中':'查询'}}</button>
+      </view>
+    </form>
+  </view>
+  <view class="tbody">
+    <view class="content">
+      <!-- <view>testinfo</view>
+      <view>testinfo2</view> -->
+      <!-- <view class='text_container' wx:if="{{!search_state}}">查询中</view> -->
+      <view class='text_container' wx:if="{{!isfind&&search_state&&!firstState}}">未找到结果</view>
+      <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isfind&&search_state}}">
+        <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
+          <view>姓名:{{item.name}}</view>
+           <view>单位:{{item.organization}}</view>
+           <view class="divLine"></view>
+        </view>
+        
+      </block>
+    </view>
+
+  </view>
+
+
+</page>

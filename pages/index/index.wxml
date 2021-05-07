@@ -1,16 +1,15 @@
 <!--index.wxml-->
 <view>
-  <view style="position:relative;padding-bottom:5rpx">
-  <form bindsubmit='searchBox'>
-    <view class="searchBlock">
+  <!-- <view style="position:relative;padding-bottom:5rpx"> -->
+  <!-- <form bindsubmit='searchBox'> -->
+    <view class="searchBlock" bindtap="jmp_search">
       <view class="searchInput">
         <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
-        <input id="searchInput" name="search_item" placeholder="老师名称"></input>
+        <input id="searchInput" name="search_item" placeholder="搜索导师"></input>
       </view>
-      <button id="submitBtn" form-type="submit">查询</button>
     </view>
-  </form>
-</view>
+  <!-- </form> -->
+<!-- </view> -->
   <view class="tbody">
     <view class='text_container'>
       <view>testinfo</view>
