@@ -21,6 +21,7 @@ page{
 .test
 {
   margin-top: 20rpx;
+  
 }
 .con_list{
   display: flex;
@@ -33,4 +34,20 @@ page{
   height: auto;
   text-align: left;
   margin-top: 20rpx;
+}
+.button_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around
+}
+/* 按钮未选中 */
+.normal_button{
+  background: #999999
+}
+/* 按钮选中 */
+.checked_button{
+  background:#336666;
+  color: white
+  
 }

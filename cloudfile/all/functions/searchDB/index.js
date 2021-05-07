@@ -13,7 +13,8 @@ exports.main = async (event, context) => {
     var res = await cloud.database().collection("teachers").field({
       "name": true,
       "organization": true,
-      "_id": true
+      "_id": true,
+      "link":true
     }).where({
       "name": {
         $regex: '.*' + event.name,

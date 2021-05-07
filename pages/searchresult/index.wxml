@@ -7,7 +7,8 @@
           <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
           <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名"></input>
         </view>
-        <button check id="submitBtn" form-type="submit" disabled="{{!search_state}}">{{!search_state?'查询中':'查询'}}</button>
+        <button check id="submitBtn" form-type="submit"
+          disabled="{{!search_state}}">{{!search_state?'查询中':'查询'}}</button>
       </view>
     </form>
   </view>
@@ -18,16 +19,23 @@
       <!-- <view class='text_container' wx:if="{{!search_state}}">查询中</view> -->
       <loading hidden="{{search_state}}">加载中...</loading>
       <view class="notfound" wx:if="{{!isfind&&search_state&&!firstState}}">
-        <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image>
-        <view style="color:grey">未找到结果</view>
+        <!-- <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image> -->
+        <image src='../../lib/images/liuhan.jpg' style="width:500rpx;height:500rpx" mode="aspectFit"></image>
+        <view style="color:grey">这jb谁啊</view>
+        <!-- <view style="color:grey">未找到结果</view> -->
       </view>
       <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isfind&&search_state}}">
         <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
-          <view>姓名:{{item.name}}</view>
-           <view>单位:{{item.organization}}</view>
-           <view class="divLine"></view>
+          <view class='flex_row'>
+            <image src="{{item.link}}" style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
+            <view class="flex_col">
+              <view>姓名:{{item.name}}</view>
+              <view>单位:{{item.organization}}</view>
+            </view>
+          </view>
+          <view class="divLine"></view>
         </view>
-        
+
       </block>
     </view>
 
