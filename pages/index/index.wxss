@@ -3,7 +3,7 @@
 .searchBlock{
   display: flex;
   align-items: center;
-  background-color: rgb(42, 196, 162);
+  background-color: rgb(53, 164, 255);
   padding-top: 15rpx;
   padding-bottom: 15rpx;
 }

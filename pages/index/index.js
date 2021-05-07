@@ -4,9 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    search_state: true,
-    isfind: false,
-    firstState: true
   },
   jmp_search(){
     wx.navigateTo({
