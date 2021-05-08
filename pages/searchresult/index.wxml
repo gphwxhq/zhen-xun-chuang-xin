@@ -5,7 +5,7 @@
       <view class="searchBlock">
         <view class="searchInput">
           <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
-          <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名"></input>
+          <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名"  ></input>
         </view>
         <button check id="submitBtn" form-type="submit"
           disabled="{{!search_state}}">{{!search_state?'查询中':'查询'}}</button>
@@ -27,7 +27,7 @@
       <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isfind&&search_state}}">
         <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
           <view class='flex_row'>
-            <image src="{{item.link}}" style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
+            <image src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}" style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
             <view class="flex_col">
               <view>姓名:{{item.name}}</view>
               <view>单位:{{item.organization}}</view>

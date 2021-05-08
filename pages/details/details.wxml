@@ -1,5 +1,5 @@
 <!--pages/details/details.wxml-->
-<image class="image" src="{{link}}"></image>
+<image class="image" src="{{link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':link}}"></image>
 <!-- <view class="con_list">
   <view class="list">
       <view class="txt_list">姓名：{{name}}</view>
