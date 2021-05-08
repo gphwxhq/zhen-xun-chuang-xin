@@ -69,6 +69,7 @@ page {height:100%}
 
 .flex_col view{
   margin-left: 20rpx;
+  width:550rpx;
 }
 #submitBtn{
   position: relative;
