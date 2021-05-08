@@ -10,13 +10,29 @@
     </view>
   <!-- </form> -->
 <!-- </view> -->
-  <view class="tbody">
+
+<!--swiper.wxml-->
+<swiper
+ autoplay="{{true}}"
+ circular="{{true}}"
+ indicator-dots="{{true}}"
+ interval="6000"
+>
+	<swiper-item>
+		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
+	</swiper-item>
+	<swiper-item>
+		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
+	</swiper-item>
+	<swiper-item>
+		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
+	</swiper-item>
+</swiper>
+
+<view class="tbody">
     <view class='text_container'>
-      <view>testinfo</view>
-      <view>testinfo2</view>
+      <view>hello</view>
+      <view>world</view>
     </view>
-    
   </view>
-  
-  
 </view>

@@ -3,7 +3,7 @@
 .searchBlock{
   display: flex;
   align-items: center;
-  background-color: rgb(53, 164, 255);
+  background-color: rgb(53, 164, 255); 
   padding-top: 15rpx;
   padding-bottom: 15rpx;
 }
@@ -17,6 +17,16 @@
   border-radius: 32rpx;
   padding-left: 10rpx;
   box-sizing: border-box;
+}
+/*swiper.wxss*/
+swiper{
+    width: 100%;
+    /*套用计算swiper高度的公式*/
+    height: calc(100vw*442/810);
+}
+image{
+  /*图片自适应屏幕大小*/
+    width: 100%;
 }
 .tbody{
   position: relative;
@@ -32,7 +42,6 @@
   margin-right:10rpx;
   /* height: 500rpx; */
 }
-
 /* #submitBtn{
   position: relative;
   background: rgb(0, 0, 0);
@@ -46,4 +55,16 @@
   font-size: 24rpx;
   color: #fff;
   display:inline-block;
+}
+swiper {
+  height: 400rpx;
+  width: 100%;
+}
+swiper-item {
+  height: 100%;
+  width: 100%;
+}
+.slide-image{
+   height: 100%;
+  width: 100%;
 }
