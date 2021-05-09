@@ -9,5 +9,10 @@ Page({
     wx.navigateTo({
       url: '../searchresult/index',
     })
-  }
+  },
+  click_for_event(){
+    wx.navigateTo({
+      url: '../event/event',
+    })
+  },
 })

@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/searchresult/index",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/event/event"
     
   ],
   "window":{
@@ -19,14 +20,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "pages/images/12.jpg",
-        "selectedIconPath": "pages/images/11.jpg",
-        "text": "论坛"
+        "iconPath": "pages/images/11.png",
+        "selectedIconPath": "pages/images/12.png",
+        "text": "发现"
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "pages/images/22.jpg",
-        "selectedIconPath": "pages/images/21.jpg",
+        "iconPath": "pages/images/22.png",
+        "selectedIconPath": "pages/images/21.png",
         "text": "首页"
       },
       {
