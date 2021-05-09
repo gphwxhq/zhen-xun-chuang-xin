@@ -5,5 +5,7 @@ App({
       env:"main-2gjpci0p59828101"
     })
   },
-  
+  tabChange(e) {
+    console.log('tab change', e)
+}
 })
