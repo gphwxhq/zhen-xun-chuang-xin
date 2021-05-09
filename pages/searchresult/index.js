@@ -11,7 +11,7 @@ Page({
     pageNum:1
   },
   searchBox(e) {
-    let search_name = e.detail.value.search_item
+    let search_name = e.detail.value.search_item==null?e.detail.value:e.detail.value.search_item
     if (search_name == ''){
       wx.showToast({
         title: '请输入内容',

@@ -1,59 +1,32 @@
 <!--pages/details/details.wxml-->
-<image class="image" src="{{link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':link}}"></image>
-<!-- <view class="con_list">
-  <view class="list">
-      <view class="txt_list">姓名：{{name}}</view>
-  </view>
-  <view class="list">
-      <view class="txt_list">性别: {{gender}}</view>
-  </view>
-</view>
-<view class="con_list">
-  <view class="list">
-      <view class="txt_list">民族：{{nation}}</view>
-  </view>
-  <view class="list">
-      <view class="txt_list">学历：{{education}}</view>
-  </view>
-</view>
-<view class="con_list">
-  <view class="list">
-      <view class="txt_list">年龄：{{age}}</view>
-  </view>
-  <view class="list">
-      <view class="txt_list">出生日期：{{birthday}}</view>
-  </view>
-</view>
-<view class="test">联系方式：{{contact}}</view>
-<view class="test">研究方向：{{direction}}</view> -->
-<!-- <button bindtap="getBasic">基本信息</button>
-<view class="con_list">
-  <view class="list">
-    <button bindtap="getProjectExperiance" type="primary" >项目经历</button>
-  </view>
-  <view class="list">
-    <button bindtap="getJobInformation" type="primary">职位信息</button>
-  </view>
-<!-- </view> -->
-<!-- <view class="con_list"> -->
-  <!-- <view class="list">
-    <button bindtap="getPaperPatent" type="primary">论文及专利</button>
-  </view>
-  <view class="list">
-    <button bindtap="getOtherInformation" type="primary">其他信息</button>
-  </view>
-</view> --> 
+<view class="card">
 
-<view class='button_container'>
-  <block wx:for="{{buttons}}" wx:key="buttons">
-  <button class='{{item.checked?"checked_button":"normal_button"}}' data-id='{{item.id}}' bindtap='radioButtonTap{{item.id}}'>{{item.name}}</button>
-  </block>
-</view>
-<view class="test">{{subject1[0]}}</view>
-<view class="test">{{subject1[1]}}</view>
-<view class="test">{{subject1[2]}}</view>
-<view class="test">{{subject1[3]}}</view>
-<view class="test">{{subject1[4]}}</view>
-<view class="test">{{subject1[5]}}</view>
-<view class="test">{{subject1[6]}}</view>
+  <view class="title">
+    <image mode="scaleToFill"
+      src="{{link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':link}}">
+    </image>
+    <view>{{name}}</view>
+  </view>
 
+  <view class='button_container'>
+    <block wx:for="{{buttons}}" wx:key="buttons">
+      <view>
+        <button class='{{item.checked?"checked_button":"normal_button"}}' data-id='{{item.id}}'
+          bindtap='radioButtonTap{{item.id}}'>{{item.name}}</button>
+      </view>
+    </block>
+  </view>
+
+  <view class="text_container">
+    <view class="line"></view>
+    <view class="grid_col">
+      <block wx:for='{{subjects}}' wx:for-index='key' wx:key="*this">
+        <view class="grid_row">
+          <view class="information_l">{{key}}</view>
+          <view class="information_r">{{item}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>

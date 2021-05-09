@@ -1,53 +1,100 @@
 /* pages/details/details.wxss */
-page{
-  background:#cccccc
+/* page{
+  display: flex;
+} */
+.card{
+  display: relative;
+  margin:10rpx;
+  padding:15rpx;
+  background-color:#cccccc;
+  border-radius: 32rpx;
 }
-.image{
-  width: 350rpx;
-}
-.information_l{
-  color:black;
-  text-align: right;
-  word-spacing:20px;
-  width: 350rpx;
-}
-.information_r{
-  color:black;
-  text-align: right;
-  width: 350rpx;
-  
-}
-
-.test
-{
-  margin-top: 20rpx;
-  
-}
-.con_list{
+.title{
+  width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: red; */
 }
-.con_list .list{
-  width: 50%;  /*width:50%;每行显示两列，width:33.3%;每行显示三列*/
-  height: auto;
-  text-align: left;
-  margin-top: 20rpx;
+.title view{
+  color:#35A4FF;
+  padding-left: 30rpx;
+  font-size: xx-large;
 }
+.title image{
+  width:400rpx;
+  height:400rpx;
+  border-radius: 32rpx;
+}
+.text_container{
+  display: flex;
+  flex-direction: row;
+   justify-content: space-between;
+   /* align-items: flex-start; */
+  background-color: white;
+  /* flex-wrap: wrap; */
+  padding:10rpx;
+  border-radius: 32rpx;
+ 
+}
+/* .grid_row{
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}*/
+.grid_col{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  /* align-items: flex-start; */
+  /* background-color: green; */
+}
+.information_l{
+  color:rgb(151, 151, 151);
+  /* text-align: left; */
+  /* word-spacing:20px; */
+}
+.information_r{
+  /* display: inline-block; */
+  color:black;
+  /* text-align: right; */
+  
+}
+.line{
+  /* margin: 0 auto; */
+  width: 3%;
+  height: 90rpx;
+  background-color: #35A4FF;
+  } 
 .button_container{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around
+  margin-top:10rpx;
+  margin-bottom: 10rpx;
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+}
+.button_container view{
+  padding-left: 3rpx;
+  display: flex;
+  width: 100rpx;
 }
 /* 按钮未选中 */
 .normal_button{
-  background: #999999
+  height:190rpx;
+  background: #999999;
+  /* font-size: medium; */
+  writing-mode:vertical-lr;
+  /* margin-left: 20rpx; */
 }
 /* 按钮选中 */
 .checked_button{
-  background:#336666;
-  color: white
-  
+  height: 230rpx;
+  background:#35A4FF;
+  color: white;
+  writing-mode:vertical-lr;
+  /* font-size: medium; */
+  /* margin-left: 20rpx; */
 }
