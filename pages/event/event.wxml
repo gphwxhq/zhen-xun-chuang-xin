@@ -1,0 +1,5 @@
+<!--pages/events/event.wxml-->
+<page>
+  <text>微信小程序大赛</text>
+  <image class="image" mode="scaleToFill"src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/events_1.png"></image>
+</page>

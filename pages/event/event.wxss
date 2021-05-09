@@ -1,0 +1,8 @@
+/* pages/events/event.wxss */
+page{
+  background:#cccccc
+}
+.image{
+  height:400;
+  width: 100%;
+}
