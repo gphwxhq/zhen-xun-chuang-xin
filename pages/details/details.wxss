@@ -83,7 +83,7 @@
 }
 /* 按钮未选中 */
 .normal_button{
-  height:190rpx;
+  height:210rpx;
   background: #999999;
   /* font-size: medium; */
   writing-mode:vertical-lr;
@@ -91,7 +91,7 @@
 }
 /* 按钮选中 */
 .checked_button{
-  height: 230rpx;
+  height: 260rpx;
   background:#35A4FF;
   color: white;
   writing-mode:vertical-lr;

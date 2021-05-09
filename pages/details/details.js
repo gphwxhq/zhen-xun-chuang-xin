@@ -6,19 +6,19 @@ Page({
    */
   data: {
     buttons: [{
-      id: 1,
+      id: 0,
       name: '基本信息'
     }, {
-      id: 2,
+      id: 1,
       name: '项目经历'
     }, {
-      id: 3,
+      id: 2,
       name: '职位信息'
     }, {
-      id: 4,
+      id: 3,
       name: '论文及专利'
     }, {
-      id: 5,
+      id: 4,
       name: '其他信息'
     }]
 
@@ -54,30 +54,32 @@ Page({
         })
         self.setData({
           link:data.link,
-          achievement: data.achievement,
-          age: data.age,
-          awards: data.awards,
-          birthday: data.birthday,
-          contact: data.contact,
-          course: data.course,
-          direction: data.direction,
-          education: data.education,
-          experience: data.experience,
-          gender: data.gender,
-          graduated: data.graduated,
-          job: data.job,
-          media: data.media,
+          // achievement: data.achievement,
+          // age: data.age,
+          // awards: data.awards,
+          // birthday: data.birthday,
+          // contact: data.contact,
+          // course: data.course,
+          // direction: data.direction,
+          // education: data.education,
+          // experience: data.experience,
+          // gender: data.gender,
+          // graduated: data.graduated,
+          // job: data.job,
+          // media: data.media,
           name: data.name,
-          nation: data.nation,
-          organization: data.organization,
-          other: data.other,
-          papers: data.papers,
-          patent: data.patent,
-          speech: data.speech,
-          title: data.title,
-          subjects: {"姓名：" : data.name, "性别：" : data.gender, "民族：" : data.nation, "学历：" : data.graduated, "年龄：" : data.age, "出生日期：" : data.birthday, "联系方式：" : data.contact, "研究方向:" : data.direction}
+          // nation: data.nation,
+          // organization: data.organization,
+          // other: data.other,
+          // papers: data.papers,
+          // patent: data.patent,
+          // speech: data.speech,
+          // title: data.title,
+          subjects: [{"姓名：" : data.name, "性别：" : data.gender, "民族：" : data.nation, "学历：" : data.graduated, "年龄：" : data.age, "出生日期：" : data.birthday, "联系方式：" : data.contact, "研究方向:" : data.direction}, {"指导项目及获奖情况：" : data.awards, "创新创业领域的经历结果和成就:" : data.achievement}, {"工作单位：" : data.organization, "职位:" : data.job, "职称：" : data.title, "毕业院校：" : data.graduated},{"专利：" : data.patent, "论文发表情况:" : data.papers}, {"公开场合发表演讲：" : data.speech, "教育经历:" : data.experience, "个人自媒体:" : data.media, "自建课程:" : data.course, "其他信息：" : data.other}],
         })
-
+        self.setData({
+          curSubject:self.data.subjects[0]
+        })
       },
       fail: function (res) {
         console.log(res)
@@ -89,62 +91,33 @@ Page({
       this.data.buttons[i].checked = false;
     }
   },
-  radioButtonTap1() {
+  show_animate1(){
+    this.animate('.checked_button', [
+      {height:'210rpx'},
+      {height:'220rpx'},
+      {height:'230rpx'},
+      {height:'240rpx'},
+      {height:'250rpx'},
+      {height:'260rpx'}
+      ], 500, function () {
+        this.clearAnimation('.checked_button', function () {
+          console.log("清除了属性")
+        })
+    }.bind(this))
+  }
+  ,
+  radioButtonTap(e) {
+    let id=e.currentTarget.dataset.id
     this.checkOff()
-    this.data.buttons[0].checked = true;
+    this.data.buttons[id].checked = true;
     this.setData({
       buttons: this.data.buttons,
     })
     this.setData({
-      subjects: {"姓名：" : this.data.name, "性别：" : this.data.gender, "民族：" : this.data.nation, "学历：" : this.data.graduated, "年龄：" : this.data.age, "出生日期：" : this.data.birthday, "联系方式：" : this.data.contact, "研究方向:" : this.data.direction}
+      curSubject:this.data.subjects[id]
     })
+    this.show_animate1()
   },
-
-  radioButtonTap2() {
-    this.checkOff()
-    this.data.buttons[1].checked = true;
-    this.setData({
-      buttons: this.data.buttons,
-    })
-    this.setData({
-      subjects: {"指导项目及获奖情况：" : this.data.awards, "创新创业领域的经历结果和成就:" : this.data.achievement}
-    })
-
-  },
-  radioButtonTap3() {
-    this.checkOff()
-    this.data.buttons[2].checked = true;
-    this.setData({
-      buttons: this.data.buttons,
-    })
-    this.setData({
-      subjects: {"工作单位：" : this.data.organization, "职位:" : this.data.job, "职称：" : this.data.title, "毕业院校：" : this.data.graduated}
-    })
-  },
-  radioButtonTap4() {
-    this.checkOff()
-    this.data.buttons[3].checked = true;
-    this.setData({
-      buttons: this.data.buttons,
-    })
-    this.setData({
-      subjects: {"专利：" : this.data.patent, "论文发表情况:" : this.data.papers}
-    })
-  },
-  radioButtonTap5() {
-    this.checkOff()
-    this.data.buttons[4].checked = true;
-    this.setData({
-      buttons: this.data.buttons,
-    })
-    this.setData({
-      subjects: {"公开场合发表演讲：" : this.data.speech, "教育经历:" : this.data.experience, "个人自媒体:" : this.data.media, "自建课程:" : this.data.course, "其他信息：" : this.data.other}
-    })
-
-
-  },
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

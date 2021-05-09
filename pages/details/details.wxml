@@ -12,7 +12,7 @@
     <block wx:for="{{buttons}}" wx:key="buttons">
       <view>
         <button class='{{item.checked?"checked_button":"normal_button"}}' data-id='{{item.id}}'
-          bindtap='radioButtonTap{{item.id}}'>{{item.name}}</button>
+          bindtap='radioButtonTap'>{{item.name}}</button>
       </view>
     </block>
   </view>
@@ -20,7 +20,7 @@
   <view class="text_container">
     <view class="line"></view>
     <view class="grid_col">
-      <block wx:for='{{subjects}}' wx:for-index='key' wx:key="*this">
+      <block wx:for='{{curSubject}}' wx:for-index='key' wx:key="*this">
         <view class="grid_row">
           <view class="information_l">{{key}}</view>
           <view class="information_r">{{item}}</view>
