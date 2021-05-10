@@ -19,21 +19,23 @@
  interval="6000"
 >
 	<swiper-item>
-    <image mode="aspectFit" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
+    <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
     <navigator url='{{item.link}}'>
           <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
         </navigator> 
 	</swiper-item>
 	<swiper-item>
-		<image mode="aspectFit" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
+		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
 	</swiper-item>
 	<swiper-item>
-		<image mode="aspectFit" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
+		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
 	</swiper-item>
 </swiper>
 
 <view class="tbody">
     <view class='text_container' bindtap='click_for_event'>
+      <view class='text_container'>近期推荐</view>
+      <view class="divLine"></view>
       <view class='flex_row'>
             <image src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/events_1.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
             <view class="flex_col">
