@@ -46,7 +46,7 @@
   background-color: red;
 }*/
 .grid_col{
-  width: 95%;
+  width: 87%;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -65,10 +65,12 @@
   
 }
 .line{
-  /* margin: 0 auto; */
-  width: 3%;
-  height: 90rpx;
-  background-color: #35A4FF;
+  /* margin-left: -20rpx; */
+  /* margin-left: -45rpx; */
+  /* margin-top:-20rpx; */
+  /* margin-top:-35rpx; */
+  /* width: 15%; */
+  width: 10%;
   } 
 .button_container{
   display: flex;
@@ -81,20 +83,29 @@
 .button_container view{
   padding-left: 3rpx;
   display: flex;
-  width: 100rpx;
+  width: 121rpx;
 }
 /* 按钮未选中 */
 .normal_button{
-  height:210rpx;
-  background: #999999;
+  height:260rpx;
+  /* background: #999999; */
+  background-image: url('https://6d61-main-2gjpci0p59828101-1305705970.tcb.qcloud.la/src/ubtn.png?sign=bf55ffed37a77c07411609213ef717d8&t=1620637146');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   /* font-size: medium; */
+  color: white;
   writing-mode:vertical-lr;
   /* margin-left: 20rpx; */
 }
 /* 按钮选中 */
 .checked_button{
-  height: 260rpx;
-  background:#35A4FF;
+  height: 290rpx;
+  /* background:#35A4FF; */
+
+  background-image: url('https://6d61-main-2gjpci0p59828101-1305705970.tcb.qcloud.la/src/cbtn.png?sign=69861e5032a32ae22d88070724162081&t=1620637022');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
   color: white;
   writing-mode:vertical-lr;
   /* font-size: medium; */

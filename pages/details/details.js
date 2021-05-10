@@ -95,9 +95,9 @@ Page({
   },
   show_animate1(){
     this.animate('.checked_button', [
-      {height:'210rpx'},
-      {height:'270rpx'},
-      {height:'260rpx'}
+      {height:'260rpx'},
+      {height:'300rpx'},
+      {height:'290rpx'}
       ], 500, function () {
         this.clearAnimation('.checked_button', function () {
           console.log("清除了动画1")

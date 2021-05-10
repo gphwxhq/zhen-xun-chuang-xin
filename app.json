@@ -21,20 +21,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "./lib/images/21.png",
-        "selectedIconPath": "./lib/images/22.png",
+        "iconPath": "./lib/images/11.png",
+        "selectedIconPath": "./lib/images/12.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/findmore/findmore",
-        "iconPath": "./lib/images/11.png",
-        "selectedIconPath": "./lib/images/12.png",
+        "iconPath": "./lib/images/21.png",
+        "selectedIconPath": "./lib/images/22.png",
         "text": "发现"
       },
       {
         "pagePath": "pages/info/info",
-        "iconPath": "./lib/images/31.jpg",
-        "selectedIconPath": "./lib/images/32.jpg",
+        "iconPath": "./lib/images/31.png",
+        "selectedIconPath": "./lib/images/32.png",
         "text": "我的"
       }
     ]

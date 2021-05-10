@@ -18,7 +18,7 @@
   </view>
 
   <view class="text_container">
-    <view class="line"></view>
+    <image class="line" mode="widthFix" src='../../lib/images/bookmark.png'></image>
     <view class="grid_col">
       <block wx:for='{{curSubject}}' wx:for-index='key' wx:key="*this">
         <view class="grid_row">
