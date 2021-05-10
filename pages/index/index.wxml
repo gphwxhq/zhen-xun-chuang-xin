@@ -19,16 +19,16 @@
  interval="6000"
 >
 	<swiper-item>
-    <image mode="scaleToFill" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
+    <image mode="aspectFit" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
     <navigator url='{{item.link}}'>
           <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
         </navigator> 
 	</swiper-item>
 	<swiper-item>
-		<image mode="scaleToFill" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
+		<image mode="aspectFit" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
 	</swiper-item>
 	<swiper-item>
-		<image mode="scaleToFill" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
+		<image mode="aspectFit" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
 	</swiper-item>
 </swiper>
 

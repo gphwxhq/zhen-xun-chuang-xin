@@ -48,19 +48,19 @@
   display:inline-block;
 }
 /*swiper.wxss*/
+
+.swiper-slide{height:10px} /* 随意指定一个height值即可 */    
+.swiper-slide-active { height:auto}
 swiper{
   width: 100%;
   /*套用计算swiper高度的公式*/
-  height: calc(100vw*442/810);
+  height: calc(75vh - 400rpx);
 }
 image{
 /*图片自适应屏幕大小*/
   width: 100%;
 }
-swiper {
-  height: 500rpx;
-  width: 100%;
-}
+
 swiper-item {
   height: 100%;
   width: 100%;
