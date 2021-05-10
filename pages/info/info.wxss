@@ -1,1 +1,13 @@
 /* pages/info/info.wxss */
+page{
+  display: relative;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info{
+  flex-direction: row;
+}

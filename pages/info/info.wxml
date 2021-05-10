@@ -1,2 +1,10 @@
 <!--pages/info/info.wxml-->
-<text>pages/info/info.wxml</text>
+<view class="main">
+  <view class="info">
+    <button bindtap="getUserProfile">获取</button>
+    <image mode="scaleToFill"
+      src="{{hasUserInfo?userInfo.avatarUrl:'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png'}}">
+    </image>
+    <view>{{hasUserInfo?userInfo.nickName:'陌生人'}}</view>
+  </view>
+</view>
