@@ -100,7 +100,7 @@ Page({
       {height:'290rpx'}
       ], 500, function () {
         this.clearAnimation('.checked_button', function () {
-          console.log("清除了动画1")
+          console.log("清除了动画1")
         })
     }.bind(this))
   },

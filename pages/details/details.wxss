@@ -1,7 +1,5 @@
 /* pages/details/details.wxss */
-/* page{
-  display: flex;
-} */
+
 .card{
   display: relative;
   margin:10rpx;
@@ -40,36 +38,19 @@
   border-radius: 32rpx;
  
 }
-/* .grid_row{
-  display: flex;
-  flex-direction: column;
-  background-color: red;
-}*/
 .grid_col{
   width: 87%;
   display: flex;
   flex-direction: column;
   justify-content:center;
-  /* align-items: flex-start; */
-  /* background-color: green; */
 }
 .information_l{
   color:rgb(151, 151, 151);
-  /* text-align: left; */
-  /* word-spacing:20px; */
 }
 .information_r{
-  /* display: inline-block; */
   color:black;
-  /* text-align: right; */
-  
 }
 .line{
-  /* margin-left: -20rpx; */
-  /* margin-left: -45rpx; */
-  /* margin-top:-20rpx; */
-  /* margin-top:-35rpx; */
-  /* width: 15%; */
   width: 10%;
   } 
 .button_container{
@@ -77,7 +58,6 @@
   flex-direction: row;
   margin-top:10rpx;
   margin-bottom: 10rpx;
-  /* flex-wrap: wrap; */
   justify-content: flex-start;
 }
 .button_container view{
@@ -101,11 +81,9 @@
 .checked_button{
   height: 290rpx;
   /* background:#35A4FF; */
-
   background-image: url('https://6d61-main-2gjpci0p59828101-1305705970.tcb.qcloud.la/src/cbtn.png?sign=69861e5032a32ae22d88070724162081&t=1620637022');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-
   color: white;
   writing-mode:vertical-lr;
   /* font-size: medium; */
