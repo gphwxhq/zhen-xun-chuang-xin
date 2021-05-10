@@ -53,7 +53,7 @@ page {height:100%}
   justify-content:center;
   align-items: center;
   height: 100%;
-  font-size:170rpx;
+  font-size:medium;
 }
 .flex_row{
   display: flex;

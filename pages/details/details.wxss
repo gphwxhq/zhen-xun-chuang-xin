@@ -6,7 +6,7 @@
   display: relative;
   margin:10rpx;
   padding:15rpx;
-  background-color:#cccccc;
+  background-color:#ebe8e8;
   border-radius: 32rpx;
 }
 .title{
@@ -15,7 +15,6 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  /* background-color: red; */
 }
 .title view{
   color:#35A4FF;

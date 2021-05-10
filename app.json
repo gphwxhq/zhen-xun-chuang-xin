@@ -1,16 +1,17 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/searchresult/index",
+    "pages/searchresult/searchresult",
     "pages/details/details",
-    "pages/event/event"
-    
+    "pages/event/event",
+    "pages/findmore/findmore",
+    "pages/info/info"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#b7b7b7",
@@ -20,24 +21,24 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "pages/images/11.png",
-        "selectedIconPath": "pages/images/12.png",
-        "text": "发现"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "pages/images/21.png",
-        "selectedIconPath": "pages/images/22.png",
+        "iconPath": "./lib/images/21.png",
+        "selectedIconPath": "./lib/images/22.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
-        "iconPath": "pages/images/31.jpg",
-        "selectedIconPath": "pages/images/32.jpg",
+        "pagePath": "pages/findmore/findmore",
+        "iconPath": "./lib/images/11.png",
+        "selectedIconPath": "./lib/images/12.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "iconPath": "./lib/images/31.jpg",
+        "selectedIconPath": "./lib/images/32.jpg",
         "text": "我的"
-      }]
-},
-
+      }
+    ]
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

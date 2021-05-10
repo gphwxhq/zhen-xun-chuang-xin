@@ -80,6 +80,8 @@ Page({
         self.setData({
           curSubject:self.data.subjects[0]
         })
+        self.show_animate1()
+        self.show_animate3()
       },
       fail: function (res) {
         console.log(res)
@@ -94,18 +96,34 @@ Page({
   show_animate1(){
     this.animate('.checked_button', [
       {height:'210rpx'},
-      {height:'220rpx'},
-      {height:'230rpx'},
-      {height:'240rpx'},
-      {height:'250rpx'},
+      {height:'270rpx'},
       {height:'260rpx'}
       ], 500, function () {
         this.clearAnimation('.checked_button', function () {
-          console.log("清除了属性")
+          console.log("清除了动画1")
         })
     }.bind(this))
-  }
-  ,
+  },
+  show_animate2(id){
+    this.animate('.text_container', [
+      {opacity:1},
+      {opacity:0}
+      ], 500, function () {
+        this.setData({
+          curSubject:this.data.subjects[id]
+        })
+    }.bind(this))
+  },
+  show_animate3(){
+    this.animate('.text_container', [
+      {opacity:0},
+      {opacity:1}
+      ], 500, function () {
+        this.clearAnimation('.text_container', function () {
+          console.log("清除了动画23")
+        })
+    }.bind(this))
+  },
   radioButtonTap(e) {
     let id=e.currentTarget.dataset.id
     this.checkOff()
@@ -113,10 +131,9 @@ Page({
     this.setData({
       buttons: this.data.buttons,
     })
-    this.setData({
-      curSubject:this.data.subjects[id]
-    })
+    this.show_animate2(id)
     this.show_animate1()
+    this.show_animate3()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

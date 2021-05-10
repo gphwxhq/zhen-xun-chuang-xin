@@ -7,7 +7,7 @@ Page({
   },
   jmp_search(){
     wx.navigateTo({
-      url: '../searchresult/index',
+      url: '../searchresult/searchresult',
     })
   },
   click_for_event(){

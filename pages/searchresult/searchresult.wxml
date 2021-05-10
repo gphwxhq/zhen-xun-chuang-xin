@@ -18,10 +18,10 @@
     <!-- <view class='text_container' wx:if="{{!search_state}}">查询中</view> -->
     <loading hidden="{{search_state}}">加载中...</loading>
     <view class="notfound" wx:if="{{!isfind&&search_state&&!firstState}}">
-      <!-- <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image> -->
-      <image src='../../lib/images/liuhan.jpg' style="width:500rpx;height:500rpx" mode="aspectFit"></image>
-      <view style="color:grey">这jb谁啊</view>
-      <!-- <view style="color:grey">未找到结果</view> -->
+      <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image>
+      <!-- <image src='../../lib/images/liuhan.jpg' style="width:500rpx;height:500rpx" mode="aspectFit"></image> -->
+      <!-- <view style="color:grey">这jb谁啊</view> -->
+      <view style="color:grey">未找到结果</view>
     </view>
     <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isfind&&search_state}}">
       <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
