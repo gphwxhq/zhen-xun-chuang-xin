@@ -63,29 +63,29 @@
 .button_container view{
   padding-left: 3rpx;
   display: flex;
-  width: 121rpx;
+  width: 115rpx;
 }
 /* 按钮未选中 */
 .normal_button{
-  height:260rpx;
+  height:210rpx;
   /* background: #999999; */
   background-image: url('https://6d61-main-2gjpci0p59828101-1305705970.tcb.qcloud.la/src/ubtn.png?sign=bf55ffed37a77c07411609213ef717d8&t=1620637146');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  /* font-size: medium; */
+  font-size: small;
   color: white;
   writing-mode:vertical-lr;
   /* margin-left: 20rpx; */
 }
 /* 按钮选中 */
 .checked_button{
-  height: 290rpx;
+  height: 240rpx;
   /* background:#35A4FF; */
   background-image: url('https://6d61-main-2gjpci0p59828101-1305705970.tcb.qcloud.la/src/cbtn.png?sign=69861e5032a32ae22d88070724162081&t=1620637022');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: white;
   writing-mode:vertical-lr;
-  /* font-size: medium; */
+  font-size: small;
   /* margin-left: 20rpx; */
 }

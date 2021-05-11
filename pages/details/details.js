@@ -95,12 +95,12 @@ Page({
   },
   show_animate1(){
     this.animate('.checked_button', [
-      {height:'260rpx'},
-      {height:'300rpx'},
-      {height:'290rpx'}
+      {height:'210rpx'},
+      {height:'250rpx'},
+      {height:'240rpx'}
       ], 500, function () {
         this.clearAnimation('.checked_button', function () {
-          console.log("清除了动画1")
+          console.log("清除了checked_button上的动画")
         })
     }.bind(this))
   },
@@ -120,7 +120,7 @@ Page({
       {opacity:1}
       ], 500, function () {
         this.clearAnimation('.text_container', function () {
-          console.log("清除了动画23")
+          console.log("清除了text_container上的动画")
         })
     }.bind(this))
   },
