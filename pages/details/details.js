@@ -80,8 +80,8 @@ Page({
         self.setData({
           curSubject:self.data.subjects[0]
         })
-        self.show_animate1()
-        self.show_animate3()
+        self.showTallerCbtn()
+        self.showFadeinText()
       },
       fail: function (res) {
         console.log(res)
@@ -93,7 +93,7 @@ Page({
       this.data.buttons[i].checked = false;
     }
   },
-  show_animate1(){
+  showTallerCbtn(){
     this.animate('.checked_button', [
       {height:'210rpx'},
       {height:'250rpx'},
@@ -104,7 +104,7 @@ Page({
         })
     }.bind(this))
   },
-  show_animate2(id){
+  showFadeawayText(id){
     this.animate('.text_container', [
       {opacity:1},
       {opacity:0}
@@ -114,7 +114,7 @@ Page({
         })
     }.bind(this))
   },
-  show_animate3(){
+  showFadeinText(){
     this.animate('.text_container', [
       {opacity:0},
       {opacity:1}
@@ -131,9 +131,9 @@ Page({
     this.setData({
       buttons: this.data.buttons,
     })
-    this.show_animate2(id)
-    this.show_animate1()
-    this.show_animate3()
+    this.showFadeawayText(id)
+    this.showTallerCbtn()
+    this.showFadeinText()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

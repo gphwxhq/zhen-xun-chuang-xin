@@ -21,8 +21,12 @@ Page({
     })
       return
     }
+    if(this.data.pageNum==1){
+      this.setData({
+        resultList:[]
+      })
+    }
     this.setData({
-      resultList:[],
       search_state: false,
       isfind: false,
       firstState: false

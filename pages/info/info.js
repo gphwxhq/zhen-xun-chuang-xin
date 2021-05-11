@@ -5,12 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    motto:'每天叫醒你的，是闹钟还是理想?',
-    hasUserInfo:false,
+    hasUserInfo: false,
+
   },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
     // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    this.showFadeawayInfo()
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
@@ -19,8 +20,44 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
+        this.showFadeinInfo()
       },
-      fail:(res)=>{
+      fail: (res) => {
+        console.log(res)
+        this.showFadeinInfo()
+      }
+    })
+    
+  },
+  showFadeawayInfo(){
+    this.animate('.info', [
+      {opacity:1},
+      {opacity:0}
+      ], 500)
+  },
+  showFadeinInfo(){
+    this.animate('.info', [
+      {opacity:0},
+      {opacity:1}
+      ], 500, function () {
+        this.clearAnimation('.info', function () {
+          console.log("清除了info上的动画")
+        })
+    }.bind(this))
+  },
+  getMotto() {
+    let self = this
+    wx.cloud.callFunction({
+      name: "getMotto",
+      data: {},
+      success: function (res) {
+        console.log(res)
+        self.setData({
+          motto:res.result
+        })
+
+      },
+      fail: function (res) {
         console.log(res)
       }
     })
@@ -29,6 +66,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getMotto()
   },
 
   /**
