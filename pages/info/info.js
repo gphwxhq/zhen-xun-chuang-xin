@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    motto:'每天叫醒你的，是闹钟还是理想?',
     hasUserInfo:false,
   },
   getUserProfile() {

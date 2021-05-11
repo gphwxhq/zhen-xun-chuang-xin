@@ -1,6 +1,7 @@
 /* pages/info/info.wxss */
 page{
   display: relative;
+  background-color:white;
 }
 .main{
   display: flex;
@@ -9,5 +10,60 @@ page{
   align-items: center;
 }
 .info{
+  width: 100%;
+  background-color: #35A4FF;
+  display: flex;
   flex-direction: row;
+  align-items: center;
 }
+.info image{
+  /* border-radius: 50px; */
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+  padding-bottom: 20rpx;
+}
+.get_info{
+  width: 20% !important;
+  /* background-color: violet; */
+}
+.name{
+  color: white;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+}
+#name{
+  padding-left: 20rpx;
+  font-weight:bold;
+  font-size: x-large;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }
+ .tbody{
+   border-width: 3px;
+   border-style: dashed;
+   border-color: brown;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+  /* justify-content: center; */
+   margin:10rpx;
+   border-radius: 32px;
+  background-color: khaki;
+   width: 95%;
+   height: 200rpx; 
+ }
+ .motto{
+   width: 100%;
+  text-align: center;
+  /* text-decoration:underline; */
+   /* color: white; */
+   font-size: x-large;
+  
+ }
