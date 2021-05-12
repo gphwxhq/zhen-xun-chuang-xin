@@ -1,6 +1,5 @@
 /**index.wxss**/
 
-page {height:100%}
 
 .searchBlock{
   display: flex;
@@ -21,9 +20,9 @@ page {height:100%}
   box-sizing: border-box;
 }
 .tbody{
-  background-color: rgb(194, 194, 194);
+  /* background-color: rgb(194, 194, 194); */
   width:100%;
-  /* padding-top:10rpx; */
+  padding-top:10rpx;
   padding-bottom: 10rpx;
   height:100%;
 }
@@ -70,6 +69,10 @@ page {height:100%}
 .flex_col view{
   margin-left: 20rpx;
   width:550rpx;
+}
+.loading_state{
+  text-align: center;
+  color: grey;
 }
 #submitBtn{
   position: relative;

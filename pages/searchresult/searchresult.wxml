@@ -7,7 +7,7 @@
         <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
         <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名" bindconfirm="searchBox"></input>
       </view>
-      <button check id="submitBtn" form-type="submit" disabled="{{!search_state}}">{{!search_state?'查询中':'查询'}}</button>
+      <button check id="submitBtn" form-type="submit" disabled="{{!searchState}}">{{!searchState?'查询中':'查询'}}</button>
     </view>
   </form>
 </view>
@@ -15,15 +15,15 @@
   <view class="content">
     <!-- <view>testinfo</view>
       <view>testinfo2</view> -->
-    <!-- <view class='text_container' wx:if="{{!search_state}}">查询中</view> -->
-    <loading hidden="{{search_state}}">加载中...</loading>
-    <view class="notfound" wx:if="{{!isfind&&search_state&&!firstState}}">
+    <!-- <view class='text_container' wx:if="{{!searchState}}">查询中</view> -->
+    <loading hidden="{{searchState}}">加载中...</loading>
+    <view class="notfound" wx:if="{{!isFind&&searchState&&!firstState}}">
       <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image>
       <!-- <image src='../../lib/images/liuhan.jpg' style="width:500rpx;height:500rpx" mode="aspectFit"></image> -->
       <!-- <view style="color:grey">这jb谁啊</view> -->
       <view style="color:grey">未找到结果</view>
     </view>
-    <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isfind&&search_state}}">
+    <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isFind&&searchState}}">
       <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
         <view class='flex_row'>
           <image
@@ -38,6 +38,10 @@
       </view>
 
     </block>
+    <view class="loading_state">
+      <view wx:if="{{isFind&&searchState&&afterSearchState}}">加载中</view>
+      <view wx:elif="{{isFinish}}">我是有底线的</view>
+    </view>
   </view>
 
 </view>

@@ -8,8 +8,9 @@ cloud.init({
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
+  let pageInterval=7
   if (event.pageNum != null && event.name != null) {
-    let mskip = event.pageNum > 1 ? (event.pageNum - 1) * 10 : 0
+    let mskip = event.pageNum > 1 ? (event.pageNum - 1) *pageInterval : 0
     var res = await cloud.database().collection("teachers").field({
       "name": true,
       "organization": true,
@@ -20,7 +21,7 @@ exports.main = async (event, context) => {
         $regex: '.*' + event.name,
         $options: 'i'
       }
-    }).limit(10).skip(mskip).get()
+    }).limit(pageInterval).skip(mskip).get()
   } else if (event.id != null) {
     var res = await cloud.database().collection("teachers").where({
       "_id":event.id
