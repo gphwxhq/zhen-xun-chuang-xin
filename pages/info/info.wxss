@@ -87,7 +87,7 @@ page {
   width: 90%;
   text-align: center;
   /* text-decoration:underline; */
-  color: rgba(223, 219, 219, 0.863);
+  color: rgba(223, 219, 219);
   font-size: large;
 }
 
@@ -117,7 +117,10 @@ page {
   border-bottom-color: #c0c0c0;
   border-bottom-width: 1px;
 }
-
+.title{
+  padding-left: 20rpx;
+  font-size: small;
+}
 .row_button view {
   font-weight: normal;
   padding-left: 10rpx;

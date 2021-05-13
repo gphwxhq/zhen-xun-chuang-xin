@@ -5,7 +5,7 @@
     <view class="searchBlock">
       <view class="searchInput">
         <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
-        <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名" bindconfirm="searchBox"></input>
+        <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名/领域/地区" bindconfirm="searchBox"></input>
       </view>
       <button check id="submitBtn" form-type="submit" disabled="{{!searchState}}">{{!searchState?'查询中':'查询'}}</button>
     </view>
