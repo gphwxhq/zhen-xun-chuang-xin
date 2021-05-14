@@ -51,15 +51,23 @@
     </view>
   </view>
 </view> -->
-  <block class='allContainer' wx:for="{{index}}" wx:key="*this" bindtap="toarticles" data-id='{{index}}'>
-    <view class='containerView'>
-      <image class='image' src='{{item.picture}}' mode='widthFix'></image>
-      <view class='containerText'>
-        <view class='title'>{{item.title}}</view>
-      </view>
+  <view class="tbody">
+    <view class='text_container'>
+      <view class='text_container'>近期推荐</view>
+      <view class="divLine"></view>
+      <block class='allContainer' wx:for="{{infoList}}" wx:key="_id">
+        <view class='containerView' bindtap="toarticles" data-id="{{item._id}}" data-url="{{item.url}}">
+          <image class='image' src='{{item.picture}}' mode='scaleToFill'></image>
+          <view class='containerText'>
+            <view class='title'>{{item.title}}</view>
+          </view>
+        </view>
+        <view class="divLine"></view>
+        <view class='solidView'>
+          <view class='b'></view>
+        </view>
+      </block>
     </view>
-    <view class='solidView'>
-      <view class='b'></view>
-    </view>
-  </block>
+  </view>
+
 </view>
