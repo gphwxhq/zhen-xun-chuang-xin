@@ -1,23 +1,8 @@
 // pages/events/event.js
-Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-
-  },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-
-  },
-
-  /**
-   * 组件的方法列表
-   */
-  methods: {
-
+Page({
+  onLoad: function(options) { 
+    this.setData({
+      url:options.url   // 通过传参实现跳转公众号推文
+    })    
   }
 })

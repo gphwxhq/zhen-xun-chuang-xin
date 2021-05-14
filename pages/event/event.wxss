@@ -1,6 +1,7 @@
 /* pages/events/event.wxss */
 page{
   background:#cccccc
+  
 }
 .image{
   height:400;

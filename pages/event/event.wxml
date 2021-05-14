@@ -1,5 +1,6 @@
 <!--pages/events/event.wxml-->
-<page>
-  <text>微信小程序大赛</text>
-  <image class="image" mode="scaleToFill"src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/events_1.png"></image>
-</page>
+<!-- <view class="container">
+ <web-view src="https://mp.weixin.qq.com/s/PfIG_1-Kf255bq9GSs6U1Q"></web-view>
+</view> -->
+
+<web-view src="{{url}}"></web-view>

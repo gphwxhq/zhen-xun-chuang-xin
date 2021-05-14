@@ -32,11 +32,12 @@
 	</swiper-item>
 </swiper>
 
-<view class="tbody">
-    <view class='text_container' bindtap='click_for_event'>
+
+<!-- <view class="tbody">
+    <view class='text_container'>
       <view class='text_container'>近期推荐</view>
       <view class="divLine"></view>
-      <view class='flex_row'>
+      <view class='flex_row' bindtap='click_for_event'>
             <image src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/events_1.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
             <view class="flex_col">
               <view>微信小程序设计大赛</view>
@@ -44,10 +45,23 @@
             </view>
           </view>
           <view class="divLine"></view>
+          <view class='flex_row'>
+            <image src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/events_1.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
+            <view class="flex_col">
+              <view>课程</view>
+              <view>2021.3~2021.5</view>
+            </view>
+          </view>
     </view>
   </view>
+</view> -->
+<block class='allContainer' wx:for="{{index}}" bindtap="toarticles" data-id='{{index}}'>
+  <view class='containerView'>
+    <image class='image' src='{{item.picture}}' mode='widthFix'></image>
+    <view class='containerText'>
+    <view class='title'>{{item.title}}</view>
+    </view>
+  </view>
+    <view class='solidView'><view class='b'></view></view>
+</block>
 </view>
-
-
-
-
