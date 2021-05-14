@@ -11,14 +11,14 @@
     <button wx:if="{{!hasUserInfo}}" class="get_info" bindtap="getUserProfile">登录</button>
   </view>
    <view class="motto_area">
-    <view style="padding-left:20rpx;">每日一句</view>
+    <view class="title">每日一句</view>
     <!--<view class="colLine"></view> -->
     <view class="motto_block">
       <view class="motto">{{motto}}</view>
     </view>
   </view>
   <view class="affair">
-      <view style="padding-left:20rpx;">功能区</view>
+      <view class="title">功能区</view>
       <button class="row_button" open-type="openSetting"><image src="../../lib/images/setting.png"></image><view>授权设置</view></button>
       <button class="row_button" open-type="feedback"> <image src="../../lib/images/feedback.png"></image><view>反馈</view></button>
   </view>
