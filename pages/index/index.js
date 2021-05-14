@@ -15,15 +15,31 @@ Page({
       url: '../event/event',
     })
   },
-  getarticles: function () {
-    var that = this
-    db.collection('index').get({
-      success(res) {
-        that.setData({
-          articles: res.data.reverse(),  // 使最新推文在上面
+
+  getarticles() {
+    let self = this
+    wx.cloud.callFunction({
+      name: "readarticle",
+      data: {
+
+      },
+      success: function (res) {
+        console.log(res)
+        self.setData({
+          infoList:res.result
         })
+
+      },
+      fail: function (res) {
+        console.log(res)
       }
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getarticles()
   },
  
   /**
@@ -31,10 +47,10 @@ Page({
    */
   toarticles: function (e) {
     var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
-    var url = this.data.index[id].url;  // 通过id判断是哪个推文的链接
+    var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
     //跳转并传参
     wx.navigateTo({
-      url: '/pages/events/events?name=articles&url=' + url,
+      url: '/pages/event/event?name=articles&url=' + url,
     })
   },
 })
