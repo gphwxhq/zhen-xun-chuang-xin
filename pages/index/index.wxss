@@ -1,18 +1,20 @@
 /**index.wxss**/
-.searchBlock{
-  background-color: rgb(53, 164, 255); 
+.searchBlock {
+  background-color: rgb(53, 164, 255);
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-top: 5rpx;
   padding-bottom: 5rpx;
 }
-.logo{
+
+.logo {
   /* padding-left: 15rpx; */
   width: 100rpx;
   height: 80rpx;
 }
-.searchInput{
+
+.searchInput {
   position: relative;
   width: 80%;
   /* margin: 0 auto; */
@@ -24,45 +26,29 @@
   box-sizing: border-box;
 }
 
-.tbody{
-  position: relative;
-  background-color: rgb(194, 194, 194);
-  width:100%;
-  padding-top:10rpx;
-  height: 1500rpx;
-}
-.text_container{
-  border-radius: 20rpx;
-  background-color: rgb(255, 255, 255);
-  margin-left: 10rpx;
-  margin-right:10rpx;
-  /* height: 500rpx; */
-}
-/* #submitBtn{
-  position: relative;
-  background: rgb(0, 0, 0);
-  color: white;
-  height: 60rpx;
-  width: 20%;
-  font-size: 21rpx;
-  border-radius: 32rpx;
-} */
-#searchInput{
+#searchInput {
   font-size: 24rpx;
   color: #fff;
-  display:inline-block;
+  display: inline-block;
 }
-/*swiper.wxss*/
 
-.swiper-slide{height:10px} /* 随意指定一个height值即可 */    
-.swiper-slide-active { height:auto}
-swiper{
+.swiper-slide {
+  height: 10px
+}
+
+/* 随意指定一个height值即可 */
+.swiper-slide-active {
+  height: auto
+}
+
+swiper {
   width: 100%;
   /*套用计算swiper高度的公式*/
   height: 420rpx;
 }
-image{
-/*图片自适应屏幕大小*/
+
+image {
+  /*图片自适应屏幕大小*/
   width: 100%;
 }
 
@@ -70,67 +56,91 @@ swiper-item {
   height: 100%;
   width: 100%;
 }
-.slide-image{
-   height: 100%;
+
+.slide-image {
+  height: 100%;
   width: 100%;
 }
-/* check_event */
-.text_container{
+
+.tbody {
+  position: relative;
+  background-color: rgb(194, 194, 194);
+  padding-top: 10rpx;
+  /* height: 1500rpx; */
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* border-radius: 20rpx; */
   background-color: rgb(255, 255, 255);
-  margin-left: 10rpx;
-  margin-right:10rpx;
-  margin-bottom: 10rpx;
-  padding:5rpx;
+  /* width: 100%; */
+  /* margin-left: 10rpx; */
+  /* margin-right:10rpx; */
   /* height: 500rpx; */
 }
-.divLine{
+
+.title {
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: solid 1rpx #c0c0c0;
+}
+
+.divLine {
   background: #E0E3DA;
   width: 100%;
   height: 5rpx;
- }
-.flex_row{
+}
+
+/* .flex_row {
   display: flex;
   flex-direction: row;
-  justify-content:left;
+  justify-content: left;
 }
-.flex_col{
+
+.flex_col {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: left;
 }
-.flex_col view{
+
+.flex_col view {
   margin-left: 20rpx;
-  width:550rpx;
-}
+  width: 550rpx;
+} */
 
 
-.allContainer{
-  margin: 45rpx;
-}
-.containerView{
+.containerView {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: solid 1rpx #c0c0c0;
 }
-.containerText{
-  flex: 1;
+
+.containerText {
+  width: 480rpx;
+  /* text-align: center; */
+  /* background-color: red; */
 }
-.content{
+
+/* .content {
   color: #888;
   margin-top: 30rpx;
+} */
+
+.image {
+  width: 240rpx;
+  height: 160rpx;
 }
-.title{
-  font-size: 35rpx;
-  font-weight:500;
-}
-.image{
-  width: 200rpx;
-  height: 180rpx;
-  margin-top: 8rpx;
-}
-.b{
+
+/* .b {
   margin-top: 20rpx;
   height: 1rpx;
   width: 80%;
   background-color: rgb(245, 241, 241);
-}
+} */

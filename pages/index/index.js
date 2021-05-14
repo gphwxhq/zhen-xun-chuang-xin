@@ -24,7 +24,6 @@ Page({
 
       },
       success: function (res) {
-        console.log(res)
         self.setData({
           infoList:res.result
         })

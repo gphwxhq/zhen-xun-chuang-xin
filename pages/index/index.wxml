@@ -53,16 +53,12 @@
 </view> -->
   <view class="tbody">
     <view class='text_container'>
-      <view class='text_container'>近期推荐</view>
-      <view class="divLine"></view>
-      <block class='allContainer' wx:for="{{infoList}}" wx:key="_id">
+      <view class="title">近期推荐</view>
+      <block wx:for="{{infoList}}" wx:key="_id">
         <view class='containerView' bindtap="toarticles" data-id="{{item._id}}" data-url="{{item.url}}">
           <image class='image' src='{{item.picture}}' mode='scaleToFill'></image>
-          <view class='containerText'>
-            <view class='title'>{{item.title}}</view>
-          </view>
+          <view class='containerText'>{{item.title}}</view>
         </view>
-        <view class="divLine"></view>
       </block>
     </view>
   </view>
