@@ -1,10 +1,10 @@
 <!--pages/findmore/findmore.wxml-->
-<!-- <image src="../../lib/images/logo.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image> -->
+<image src="../../lib/images/logo.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
 <view class="tbody">
-  <view class='recommend'>
-    <view class='recommend'>最近导师推荐: {{province}}</view>
+  <view class='recommend' wx:if="{{isGetProvince}}">
+    <view class='recommend' >最近导师推荐: {{province}}</view>
     <view class="divLine"></view>
-    <block wx:for="{{resultList}}" wx:if="isGetProvince">
+    <block wx:for="{{resultList}}" >
       <view class='recommend' bindtap='click_for_detail' data-id='{{item._id}}'>
         <view class='flex_row'>
           <image

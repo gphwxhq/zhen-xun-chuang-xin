@@ -53,7 +53,7 @@
 </view> -->
   <view class="tbody">
     <view class='text_container'>
-      <view class="title">近期推荐</view>
+      <view class="title">近期新闻</view>
       <block wx:for="{{infoList}}" wx:key="_id">
         <view class='containerView' bindtap="toarticles" data-id="{{item._id}}" data-url="{{item.url}}">
           <image class='image' src='{{item.picture}}' mode='scaleToFill'></image>
