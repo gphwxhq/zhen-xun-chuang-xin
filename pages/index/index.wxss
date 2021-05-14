@@ -54,7 +54,7 @@
 swiper{
   width: 100%;
   /*套用计算swiper高度的公式*/
-  height: 500rpx;
+  height: 420rpx;
 }
 image{
 /*图片自适应屏幕大小*/
