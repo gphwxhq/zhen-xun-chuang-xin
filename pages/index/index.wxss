@@ -125,7 +125,7 @@ swiper-item {
 }
 .image{
   width: 200rpx;
-  height: 150rpx;
+  height: 180rpx;
   margin-top: 8rpx;
 }
 .b{
