@@ -1,17 +1,24 @@
 <!--pages/findmore/findmore.wxml-->
-<image src="../../lib/images/logo.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
+<!-- <image src="../../lib/images/logo.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image> -->
 <view class="tbody">
-  <view class='text_container' bindtap='click_for_event'>
-      <view class='text_container'>最近导师推荐</view>
-      <view class="divLine"></view>
-      <view class='flex_row'>
-            <image src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/events_1.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
-            <view class="flex_col">
-              <view>微信小程序设计大赛</view>
-              <view>2021.3~2021.5</view>
-            </view>
+  <view class='recommend'>
+    <view class='recommend'>最近导师推荐: {{province}}</view>
+    <view class="divLine"></view>
+    <block wx:for="{{resultList}}" wx:if="isGetProvince">
+      <view class='recommend' bindtap='click_for_detail' data-id='{{item._id}}'>
+        <view class='flex_row'>
+          <image
+            src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
+            style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
+          <view class="flex_col">
+            <view>姓名:{{item.name}}</view>
+            <view>单位:{{item.organization}}</view>
           </view>
-          <view class="divLine"></view>
-    </view>
-</view>
+        </view>
+        <view class="divLine"></view>
+      </view>
 
+    </block>
+  </view>
+  
+</view>

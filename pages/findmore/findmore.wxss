@@ -10,7 +10,7 @@ image{
     padding-top:10rpx;
     height: 1500rpx;
   }
-  .text_container{
+  .recommend{
     /* border-radius: 20rpx; */
     background-color: rgb(255, 255, 255);
     margin-left: 10rpx;

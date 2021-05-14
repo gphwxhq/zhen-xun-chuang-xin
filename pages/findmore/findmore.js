@@ -1,10 +1,11 @@
 // pages/findmore/findmore.js
 Page({
-  get_address(){
-    let self=this
+  get_address() {
+
+    let self = this
     wx.getLocation({
       type: 'wgs84',
-      success (res) {
+      success(res) {
         const latitude = res.latitude
         const longitude = res.longitude
         console.log(res)
@@ -14,28 +15,58 @@ Page({
           data: {
             ak: 'N1jI4G0nT0aDeMYLQQLfxGTTcO7MzoIa',
             output: 'json',
-            coordtype:'wgs84ll',
-            location:latitude+','+longitude
+            coordtype: 'wgs84ll',
+            location: latitude + ',' + longitude
           },
-          success (res) {
+          success(res) {
             console.log(res)
             self.setData({
-              isGetProvince:true,
-              province:res.data.result.addressComponent.province
+              isGetProvince: true,
+              province: res.data.result.addressComponent.province
             })
             console.log(self.data.province)
+            wx.cloud.callFunction({
+              name: "searchDB",
+              data: {
+                province: self.data.province
+              },
+              success: function (res) {
+                // console.log(res)
+                if (res.result == null) {
+                  console.log(res)
+                  return
+                }
+                if (res.result.length != 0) {
+                   console.log(res)
+                  self.setData({
+                    resultList:res.result
+                  })
+                }
+              },
+              fail: function (res) {
+                console.log(res)
+              }
+            })
           }
         })
       },
-      fail(res){
+      fail(res) {
         console.log(res)
         self.setData({
-          isGetProvince:false
+          isGetProvince: false
         })
       }
-     })
+    })
+
+
   },
   onShow: function (options) {
     this.get_address()
   },
+  click_for_detail(e) {
+    wx.navigateTo({
+      url: '../details/details?id=' + e.currentTarget.dataset.id,
+    })
+  },
+
 })
