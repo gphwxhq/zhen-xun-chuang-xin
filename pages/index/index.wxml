@@ -2,38 +2,34 @@
 <view>
   <!-- <view style="position:relative;padding-bottom:5rpx"> -->
   <!-- <form bindsubmit='searchBox'> -->
-    <view class="searchBlock" bindtap="jmp_search">
-      <view class="searchInput">
-        <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
-        <input id="searchInput" name="search_item" placeholder="搜索导师"></input>
-      </view>
+  <view class="searchBlock">
+    <image class="logo" src="../../lib/images/logo_white.png"></image>
+    <view class="searchInput" bindtap="jmp_search">
+      <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
+      <input id="searchInput" name="search_item" placeholder="搜索导师"></input>
     </view>
+  </view>
   <!-- </form> -->
-<!-- </view> -->
+  <!-- </view> -->
 
-<!--swiper.wxml-->
-<swiper
- autoplay="{{true}}"
- circular="{{true}}"
- indicator-dots="{{true}}"
- interval="6000"
->
-	<swiper-item>
-    <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
-    <navigator url='{{item.link}}'>
-          <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
-        </navigator> 
-	</swiper-item>
-	<swiper-item>
-		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
-	</swiper-item>
-	<swiper-item>
-		<image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
-	</swiper-item>
-</swiper>
+  <!--swiper.wxml-->
+  <swiper autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}" interval="6000">
+    <swiper-item>
+      <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
+      <navigator url='{{item.link}}'>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
+      </navigator>
+    </swiper-item>
+    <swiper-item>
+      <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
+    </swiper-item>
+  </swiper>
 
 
-<!-- <view class="tbody">
+  <!-- <view class="tbody">
     <view class='text_container'>
       <view class='text_container'>近期推荐</view>
       <view class="divLine"></view>
@@ -55,13 +51,15 @@
     </view>
   </view>
 </view> -->
-<block class='allContainer' wx:for="{{index}}" bindtap="toarticles" data-id='{{index}}'>
-  <view class='containerView'>
-    <image class='image' src='{{item.picture}}' mode='widthFix'></image>
-    <view class='containerText'>
-    <view class='title'>{{item.title}}</view>
+  <block class='allContainer' wx:for="{{index}}" wx:key="*this" bindtap="toarticles" data-id='{{index}}'>
+    <view class='containerView'>
+      <image class='image' src='{{item.picture}}' mode='widthFix'></image>
+      <view class='containerText'>
+        <view class='title'>{{item.title}}</view>
+      </view>
     </view>
-  </view>
-    <view class='solidView'><view class='b'></view></view>
-</block>
+    <view class='solidView'>
+      <view class='b'></view>
+    </view>
+  </block>
 </view>
