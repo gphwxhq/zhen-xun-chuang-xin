@@ -29,7 +29,7 @@ Page({
               name: "searchDB",
               data: {
                 province: self.data.province,
-                pageNum:1
+                pageNum: 1
               },
               success: function (res) {
                 // console.log(res)
@@ -38,9 +38,9 @@ Page({
                   return
                 }
                 if (res.result.length != 0) {
-                   console.log(res)
+                  console.log(res)
                   self.setData({
-                    resultList:res.result
+                    resultList: res.result
                   })
                 }
               },
@@ -61,7 +61,7 @@ Page({
 
 
   },
-  onShow: function (options) {
+  onLoad: function (options) {
     this.get_address()
   },
   click_for_detail(e) {
@@ -69,9 +69,11 @@ Page({
       url: '../details/details?id=' + e.currentTarget.dataset.id,
     })
   },
-  jump_teachers(){
+  jump_teachers() {
+    if (!this.data.isGetProvince)
+      return
     wx.navigateTo({
-      url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"'+this.data.province+'","pageNum":1}',
+      url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"' + this.data.province + '","pageNum":1}',
     })
   },
 

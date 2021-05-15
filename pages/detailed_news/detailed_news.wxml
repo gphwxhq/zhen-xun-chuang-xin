@@ -19,4 +19,8 @@
       <view class="divLine"></view>
     </view>
   </block>
+  <view class="loading_state">
+      <!-- <view wx:if="{{isFind&&searchState&&afterSearchState}}">加载中</view> -->
+      <view wx:if="{{isFinish}}">我是有底线的</view>
+    </view>
 </view>
