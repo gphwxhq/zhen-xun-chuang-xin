@@ -51,12 +51,13 @@ Page({
     var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
     //跳转并传参
     wx.navigateTo({
-      url: '/pages/event/event?name=articles&url=' + url,
+      url: '../event/event?url=' + url,
     })
   },
   click_for_message(e){
+    let url='https://mp.weixin.qq.com/s/yQpKosfpv80Q47WggnXqbQ'
     wx.navigateTo({
-      url: '../event/event'
+      url:  '../event/event?url='+url,
     })
   },
 
