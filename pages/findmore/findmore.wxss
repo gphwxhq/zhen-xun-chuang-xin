@@ -1,6 +1,7 @@
 /* pages/findmore/findmore.wxss */
-image{
+image {
   /*图片自适应屏幕大小*/
+<<<<<<< Updated upstream
     width: 100%;
   }
   .tbody{
@@ -46,3 +47,53 @@ image{
     margin-left: 20rpx;
     width:550rpx;
   }
+=======
+  width: 100%;
+}
+
+.tbody {
+  position: relative;
+  background-color: rgb(194, 194, 194);
+  width: 100%;
+  padding-top: 10rpx;
+  height: 1500rpx;
+}
+
+.recommend {
+  /* border-radius: 20rpx; */
+  background-color: rgb(255, 255, 255);
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  padding: 5rpx;
+  /* height: 500rpx; */
+}
+
+.divLine {
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.flex_col view {
+  margin-left: 20rpx;
+  width: 550rpx;
+}
+.province_Loca{
+  margin-right: 20rpx;
+  
+}
+>>>>>>> Stashed changes
