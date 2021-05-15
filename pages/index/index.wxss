@@ -65,7 +65,7 @@ swiper-item {
 .tbody {
   position: relative;
   background-color: rgb(194, 194, 194);
-  /* padding-top: 10rpx; */
+  padding-top: 10rpx;
   /* height: 1500rpx; */
 }
 
@@ -133,10 +133,19 @@ swiper-item {
   /* background-color: red; */
 }
 
-
+/* .content {
+  color: #888;
+  margin-top: 30rpx;
+} */
 
 .image {
   width: 240rpx;
   height: 160rpx;
 }
 
+/* .b {
+  margin-top: 20rpx;
+  height: 1rpx;
+  width: 80%;
+  background-color: rgb(245, 241, 241);
+} */
