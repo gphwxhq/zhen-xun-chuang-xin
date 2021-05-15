@@ -54,4 +54,10 @@ Page({
       url: '/pages/event/event?name=articles&url=' + url,
     })
   },
+  click_for_message(e){
+    wx.navigateTo({
+      url: '../event/event'
+    })
+  },
+
 })

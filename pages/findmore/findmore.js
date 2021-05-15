@@ -76,9 +76,9 @@ Page({
       url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"' + this.data.province + '","pageNum":1}',
     })
   },
-  to_tips(){
+  to_tips(e){
     wx.navigateTo({
-      url: 'https://mp.weixin.qq.com/mp/homepage?__biz=MzI5ODM1OTI5NA==&hid=11&sn=a3c2e8ccd62ba13c39ef173b482f44fa&scene=18#wechat_redirect',
+      url: '../event/event',
     })
   }
 })

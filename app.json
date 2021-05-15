@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/tip/tip",
+    
     "pages/index/index",
     "pages/searchresult/searchresult",
     "pages/details/details",
     "pages/event/event",
     "pages/findmore/findmore",
     "pages/info/info",
-    "pages/detailed_news/detailed_news"
+    "pages/detailed_news/detailed_news",
+    "pages/tip/tip"
   ],
   "window": {
     "backgroundTextStyle": "light",
