@@ -82,10 +82,15 @@ swiper-item {
 }
 
 .title {
-  padding-left: 10rpx;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10rpx;
   border-bottom: solid 1rpx #c0c0c0;
+}
+.title view{
+  font-size: small;
+  color: #858585;
 }
 
 .divLine {

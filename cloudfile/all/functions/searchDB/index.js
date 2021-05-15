@@ -40,10 +40,16 @@ exports.main = async (event, context) => {
     var res = await cloud.database().collection("teachers").where({
       "_id": event.id
     }).limit(1).get()
-  } else if (event.province != null) {
-    var res = await cloud.database().collection("teachers").where({
+  } else if (event.province != null &&event.pageNum!=null) {
+    let mskip = event.pageNum > 1 ? (event.pageNum - 1) * pageInterval : 0
+    var res = await cloud.database().collection("teachers").field({
+      "name": true,
+      "organization": true,
+      "_id": true,
+      "link": true
+    }).where({
       "area": event.province
-    }).get()
+    }).limit(pageInterval).skip(mskip).get()
   } else
     return null
   return res.data

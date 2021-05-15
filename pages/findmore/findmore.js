@@ -28,7 +28,8 @@ Page({
             wx.cloud.callFunction({
               name: "searchDB",
               data: {
-                province: self.data.province
+                province: self.data.province,
+                pageNum:1
               },
               success: function (res) {
                 // console.log(res)
@@ -66,6 +67,11 @@ Page({
   click_for_detail(e) {
     wx.navigateTo({
       url: '../details/details?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  jump_teachers(){
+    wx.navigateTo({
+      url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"'+this.data.province+'","pageNum":1}',
     })
   },
 

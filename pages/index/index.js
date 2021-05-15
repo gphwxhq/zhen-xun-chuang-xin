@@ -15,13 +15,17 @@ Page({
       url: '../event/event',
     })
   },
-
+  jump_news(){
+    wx.navigateTo({
+      url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
+    })
+  },
   getarticles() {
     let self = this
     wx.cloud.callFunction({
       name: "readarticle",
       data: {
-
+        pageNum:1
       },
       success: function (res) {
         self.setData({

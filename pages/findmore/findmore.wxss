@@ -19,6 +19,13 @@ image{
     padding:5rpx;
     /* height: 500rpx; */
   }
+.rec_jmp{
+  padding-left:230rpx;
+  display: inline;
+  font-size: small;
+  color: #858585;
+}
+
   .divLine{
     background: #E0E3DA;
     width: 100%;
