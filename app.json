@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/tip/tip",
     "pages/index/index",
     "pages/searchresult/searchresult",
     "pages/details/details",

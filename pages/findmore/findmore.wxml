@@ -1,16 +1,36 @@
 <!--pages/findmore/findmore.wxml-->
-<image src="../../lib/images/logo.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
-
 
 <view class="tbody">
+  <view class="tips">
+    <view class="tips_col" bindtap="to_tips">
+      <image src="../../lib/images/tip_1.png" mode="scaleToFill"></image> 
+      <view>创业研究</view>
+    </view>
+    <view class="line"></view>
+    <view class="tips_col">
+      <image src="../../lib/images/tip_2.png" mode="scaleToFill"></image>
+      <view>微创课堂</view>
+    </view>
+    <view class="line"></view>
+    <view class="tips_col">
+      <image src="../../lib/images/tip_3.png" mode="scaleToFill"></image>
+      <view>随想转发</view>
+    </view>
+  </view>
+
   <view class='recommend' wx:if="{{isGetProvince}}">
-    <view class='title'>最近导师推荐<view class="rec_jmp" bindtap="jump_teachers">{{province}} 查看更多</view>
+    <view class='title'>最近导师推荐
+      <view class="rec_jmp" bindtap="jump_teachers">
+        <image src="../../lib/images/location.png"></image>
+        <view>{{province}} 查看更多</view>
+      </view>
     </view>
     <block wx:for="{{resultList}}" wx:key="_id">
       <!-- <view class='recommend' > -->
       <view class='flex_row' bindtap='click_for_detail' data-id='{{item._id}}'>
         <image
-          src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}" mode="scaleToFill"></image>
+          src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
+          mode="scaleToFill"></image>
         <view class="flex_col">
           <view>姓名:{{item.name}}</view>
           <view>单位:{{item.organization}}</view>

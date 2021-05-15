@@ -11,7 +11,29 @@ image {
   padding-top: 10rpx;
   height: 1500rpx;
 }
-
+.tips{
+  display: flex;
+  height: 200rpx;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+.tips_col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:small;
+  color: #858585;
+}
+.tips image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.line{
+  width: 1rpx;
+  background-color: #c0c0c0;
+  height: 80%;
+}
 .recommend {
   display: flex;
   flex-direction: column;
@@ -28,6 +50,7 @@ image {
   justify-content: space-between;
   align-items: center;
   padding:10rpx;
+  border-top: solid 1rpx #c0c0c0;
   border-bottom: solid 1rpx #c0c0c0;
 }
 
@@ -35,6 +58,7 @@ image {
   display: flex;
   flex-direction: row;
   justify-content: left;
+  align-items: center;
   border-bottom: solid 1rpx #c0c0c0;
 }
 .flex_row image{
@@ -56,6 +80,12 @@ image {
 }
 
 .rec_jmp{ 
+  display: flex;
   font-size: small; 
   color: #858585; 
 } 
+.rec_jmp image{
+  /* background-color: red; */
+  width:40rpx;
+  height: 40rpx;
+}

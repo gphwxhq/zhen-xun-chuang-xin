@@ -61,7 +61,19 @@ Page({
       }
     })
   },
-
+  click_for_detail(e) {
+    wx.navigateTo({
+      url: '../details/details?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  toarticles: function (e) {
+    var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
+    var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
+    //跳转并传参
+    wx.navigateTo({
+      url: '/pages/event/event?name=articles&url=' + url,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,5 +1,7 @@
 {
-  "component": true,
   "usingComponents": {},
-  "navigationBarBackgroundColor":"#35A4FF" 
+  "navigationBarTitleText":"臻寻创新",
+  "navigationBarBackgroundColor":"#35A4FF",
+  "navigationBarTextStyle":"white",
+  "backgroundTextStyle":"dark"
 }
