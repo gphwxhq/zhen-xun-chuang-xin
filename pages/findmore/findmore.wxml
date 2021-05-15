@@ -1,8 +1,10 @@
 <!--pages/findmore/findmore.wxml-->
 <image src="../../lib/images/logo.png" style="width:200rpx;height:150rpx" mode="scaleToFill"></image>
+
+
 <view class="tbody">
   <view class='recommend' wx:if="{{isGetProvince}}">
-    <view class='recommend' >最近导师推荐: {{province}}<view class="rec_jmp" bindtap="jump_teachers">查看更多</view></view>
+    <view class='recommend' >最近导师推荐: {{province}}<view class="rec_jmp" bindtap="jump_teachers">查看更多</view></view> 
     <view class="divLine"></view>
     <block wx:for="{{resultList}}" >
       <view class='recommend' bindtap='click_for_detail' data-id='{{item._id}}'>
