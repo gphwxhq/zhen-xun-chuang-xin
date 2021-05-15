@@ -65,7 +65,7 @@ swiper-item {
 .tbody {
   position: relative;
   background-color: rgb(194, 194, 194);
-  padding-top: 10rpx;
+  /* padding-top: 10rpx; */
   /* height: 1500rpx; */
 }
 

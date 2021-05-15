@@ -1,26 +1,25 @@
 <!--pages/detailed_news/detailed_news.wxml-->
 <view class='text_container'>
   <view class="title">{{title}}</view>
-  <block  wx:for="{{infoList}}" wx:key="_id">
-    <view wx:if="{{title=='动态'}}" class='containerView' bindtap="toarticles" data-id="{{item._id}}" data-url="{{item.url}}">
+  <block wx:for="{{infoList}}" wx:key="_id">
+    <view wx:if="{{title=='动态'}}" class='containerView' bindtap="toarticles" data-id="{{item._id}}"
+      data-url="{{item.url}}">
       <image class='image' src='{{item.picture}}' mode='scaleToFill'></image>
       <view class='containerText'>{{item.title}}</view>
     </view>
-    <view  wx:if="{{title=='导师信息'}}" class='recommend' bindtap='click_for_detail' data-id='{{item._id}}'>
-      <view class='flex_row'>
-        <image
-          src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
-          style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
-        <view class="flex_col">
-          <view>姓名:{{item.name}}</view>
-          <view>单位:{{item.organization}}</view>
-        </view>
+    <view wx:if="{{title=='导师信息'}}" class='flex_row' bindtap='click_for_detail' data-id='{{item._id}}'>
+      <image
+        src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
+        mode="scaleToFill"></image>
+      <view class="flex_col">
+        <view>姓名:{{item.name}}</view>
+        <view>单位:{{item.organization}}</view>
       </view>
-      <view class="divLine"></view>
+      <!-- </view> -->
     </view>
   </block>
   <view class="loading_state">
-      <!-- <view wx:if="{{isFind&&searchState&&afterSearchState}}">加载中</view> -->
-      <view wx:if="{{isFinish}}">我是有底线的</view>
-    </view>
+    <view wx:if="{{isLoading}}">加载中</view>
+    <view wx:elif="{{isFinish}}">我是有底线的</view>
+  </view>
 </view>

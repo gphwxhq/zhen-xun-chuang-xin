@@ -5,21 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLoading:false,
     isFinish: false,
     pageInterval:7
   },
-
+  click_for_detail(e) {
+    wx.navigateTo({
+      url: '../details/details?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  toarticles: function (e) {
+    var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
+    var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
+    //跳转并传参
+    wx.navigateTo({
+      url: '/pages/event/event?name=articles&url=' + url,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let functionName = options.functionName
     let params = JSON.parse(options.params)
+    let title=options.title
     console.log(params)
+    wx.setNavigationBarTitle({
+      title: title
+    })
     this.setData({
       functionName: functionName,
       params: params,
-      title: options.title,
+      title: title,
     })
     let self = this
     wx.cloud.callFunction({
@@ -87,6 +104,7 @@ Page({
     if(this.data.isFinish)
      return
     this.setData({
+      isLoading:true,
       ['params.pageNum']: this.data.params.pageNum + 1
     })
     console.log(this.data.params.pageNum)
@@ -104,7 +122,8 @@ Page({
             isFinish: true
           })
         self.setData({
-          infoList: self.data.infoList.concat(res.result) 
+          infoList: self.data.infoList.concat(res.result) ,
+          isLoading:false
         })
         console.log(res)
       },

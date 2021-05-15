@@ -4,23 +4,21 @@
 
 <view class="tbody">
   <view class='recommend' wx:if="{{isGetProvince}}">
-    <view class='recommend' >最近导师推荐: {{province}}<view class="rec_jmp" bindtap="jump_teachers">查看更多</view></view> 
-    <view class="divLine"></view>
-    <block wx:for="{{resultList}}" >
-      <view class='recommend' bindtap='click_for_detail' data-id='{{item._id}}'>
-        <view class='flex_row'>
-          <image
-            src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
-            style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
-          <view class="flex_col">
-            <view>姓名:{{item.name}}</view>
-            <view>单位:{{item.organization}}</view>
-          </view>
+    <view class='title'>最近导师推荐<view class="rec_jmp" bindtap="jump_teachers">{{province}} 查看更多</view>
+    </view>
+    <block wx:for="{{resultList}}" wx:key="_id">
+      <!-- <view class='recommend' > -->
+      <view class='flex_row' bindtap='click_for_detail' data-id='{{item._id}}'>
+        <image
+          src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}" mode="scaleToFill"></image>
+        <view class="flex_col">
+          <view>姓名:{{item.name}}</view>
+          <view>单位:{{item.organization}}</view>
         </view>
-        <view class="divLine"></view>
+        <!-- </view> -->
       </view>
 
     </block>
   </view>
-  
+
 </view>
