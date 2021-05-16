@@ -178,20 +178,21 @@ Page({
     })
   },
   to_tip_1(e) {
-    let url = 'https://mp.weixin.qq.com/mp/homepage?__biz=MzI5ODM1OTI5NA==&hid=11&sn=a3c2e8ccd62ba13c39ef173b482f44fa&scene=18#wechat_redirect'
-    wx.navigateTo({
-      url: '../event/event?url=' + url,
-    })
-  },
-  to_tip_2(e) {
-    let url = 'https://mp.weixin.qq.com/s/GKn1BW318qoT0ZDDRg49EA'
+    let url = 'https://mp.weixin.qq.com/s/yQpKosfpv80Q47WggnXqbQ'
     wx.navigateTo({
       url: '../event/event?url=' + url,
     })
   },
   to_tip_3(e) {
+    let url = 'https://mp.weixin.qq.com/s/GKn1BW318qoT0ZDDRg49EA'
     wx.navigateTo({
-      url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
+      url: '../event/event?url=' + url,
+    })
+  },
+  to_tip_2(e) {
+    //let url='https://appjkeibaef6746.h5.xiaoeknow.com/homepage?entry=2&entry_type=2001'
+    wx.navigateTo({
+      url: 'https://appjkeibaef6746.h5.xiaoeknow.com/homepage?entry=2&entry_type=2001',
     })
   }
 })

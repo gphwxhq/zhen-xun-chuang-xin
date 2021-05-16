@@ -6,7 +6,8 @@ Page({
   data: {
     isLoading:false,
     isFinish: false,
-    pageInterval:7
+    pageInterval:7,
+    isEmpty:false
   },
   click_for_detail(e) {
     wx.navigateTo({
@@ -56,6 +57,9 @@ Page({
         // console.log(res)
       },
       fail: function (res) {
+        self.setData({
+          isEmpty: true
+        })
         console.log(res)
       }
     })

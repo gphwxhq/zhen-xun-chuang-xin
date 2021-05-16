@@ -2,21 +2,19 @@
 
 <view class="tbody">
   <view class="tips">
-    <view class="tips_col" bindtap='to_tip_1'>
+    <view class="tips_col" bindtap="to_tip_1">
       <image src="../../lib/images/tip_1.png" mode="scaleToFill"></image>
       <view>创业研究</view>
     </view>
     <view class="line"></view>
-    <view class="tips_col" bindtap='to_tip_2'>
+    <view class="tips_col" bindtap="to_tip_2">
       <image src="../../lib/images/tip_2.png" mode="scaleToFill"></image>
       <view>微创课堂</view>
     </view>
     <view class="line"></view>
-    <view class="tips_col" >
-      <button data-name="shareBt" open-type="share" plain='true' style="position: relative; left: -40rpx; top: 0rpx; width: 104rpx; height: 120rpx; display: block; box-sizing: border-box">
-        <image src="../../lib/images/tip_3.png" mode="scaleToFill"></image>
-      </button>
-      <view>随想转发</view>
+    <view class="tips_col" bindtap="to_tip_3">
+      <image src="../../lib/images/tip_3.png" mode="scaleToFill"></image>
+      <view>创意分享</view>
     </view>
   </view>
 
