@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    isContainerEmpty:false
   },
   jmp_search(){
     wx.navigateTo({
@@ -31,9 +32,11 @@ Page({
         self.setData({
           infoList:res.result
         })
-
       },
       fail: function (res) {
+        self.setData({
+          isContainerEmpty:true
+        })
         console.log(res)
       }
     })

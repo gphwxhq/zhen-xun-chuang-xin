@@ -2,10 +2,10 @@
 <view class="card">
 
   <view class="title">
-    <image mode="scaleToFill"
+    <image-loader my-class="teacher_img" mode="scaleToFill"
       src="{{link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':link}}">
-    </image>
-    <view>{{name}}</view>
+    </image-loader>
+    <view class="desc">{{name}}</view>
   </view>
 
   <view class='button_container'>
@@ -19,6 +19,7 @@
 
   <view class="text_container">
     <image class="line" mode="widthFix" src='../../lib/images/bookmark.png'></image>
+    <empty-item active="{{isError}}"></empty-item>
     <view class="grid_col">
       <block wx:for='{{curSubject}}' wx:for-index='key' wx:key="*this">
         <view class="grid_row">

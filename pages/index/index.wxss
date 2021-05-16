@@ -65,7 +65,7 @@ swiper-item {
 .tbody {
   position: relative;
   background-color: rgb(194, 194, 194);
-  /* padding-top: 10rpx; */
+  padding-top: 10rpx;
   /* height: 1500rpx; */
 }
 .tip_picture{
@@ -77,8 +77,10 @@ swiper-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* border-radius: 20rpx; */
+  border-radius: 20rpx;
   background-color: rgb(255, 255, 255);
+  /* margin-top: 10rpx; */
+  margin-bottom: 10rpx;
   /* width: 100%; */
   /* margin-left: 10rpx; */
   /* margin-right:10rpx; */
@@ -90,7 +92,7 @@ swiper-item {
   justify-content: space-between;
   align-items: center;
   padding:10rpx;
-  border-bottom: solid 1rpx #c0c0c0;
+  /* border-bottom: solid 1rpx #c0c0c0; */
 }
 .title view{
   font-size: small;

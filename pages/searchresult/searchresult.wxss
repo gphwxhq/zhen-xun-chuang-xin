@@ -46,18 +46,22 @@
   width: 100%;
   height: 5rpx;
  }
-.notfound{
+/* .notfound{
   display: flex;
   flex-direction: column;
   justify-content:center;
   align-items: center;
   height: 500rpx;
   font-size:medium;
-}
+} */
 .flex_row{
   display: flex;
   flex-direction: row;
   justify-content:left;
+}
+.teacher_img{
+  width:150rpx;
+  height:150rpx
 }
 .flex_col{
   display: flex;

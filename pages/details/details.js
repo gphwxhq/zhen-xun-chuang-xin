@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isError:false,
     buttons: [{
       id: 0,
       name: '基本信息'
@@ -84,6 +85,9 @@ Page({
         self.showFadeinText()
       },
       fail: function (res) {
+        self.setData({
+          isError:true
+        })
         console.log(res)
       }
     })

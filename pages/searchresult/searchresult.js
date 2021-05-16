@@ -71,6 +71,10 @@ Page({
       },
       fail: function (res) {
         console.log(res)
+        self.setData({
+          searchState: true,
+          isFind: false,
+        })
       }
     })
     // wx.navigateTo({

@@ -1,0 +1,6 @@
+<!--components/empty-item.wxml-->
+<!-- <view class="notfound" wx:if="{{active}}"> -->
+<view wx:if="{{active}}" class="notfound">
+    <image src='/lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image>
+    <view style="color:grey">未找到结果</view>
+</view>

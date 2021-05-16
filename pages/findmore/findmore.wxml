@@ -3,7 +3,7 @@
 <view class="tbody">
   <view class="tips">
     <view class="tips_col" bindtap="to_tips">
-      <image src="../../lib/images/tip_1.png" mode="scaleToFill"></image> 
+      <image src="../../lib/images/tip_1.png" mode="scaleToFill"></image>
       <view>创业研究</view>
     </view>
     <view class="line"></view>
@@ -19,7 +19,7 @@
   </view>
 
   <view class='recommend' wx:if="{{isGetProvince}}">
-    <view class='title'>最近导师推荐
+    <view class='title'>同省导师推荐
       <view class="rec_jmp" bindtap="jump_teachers">
         <image src="../../lib/images/location.png"></image>
         <view>{{province}} 查看更多</view>
@@ -28,16 +28,27 @@
     <block wx:for="{{resultList}}" wx:key="_id">
       <!-- <view class='recommend' > -->
       <view class='flex_row' bindtap='click_for_detail' data-id='{{item._id}}'>
-        <image
+        <image-loader my-class="result_img"
           src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
-          mode="scaleToFill"></image>
+          mode="scaleToFill"></image-loader>
         <view class="flex_col">
           <view>姓名:{{item.name}}</view>
           <view>单位:{{item.organization}}</view>
         </view>
         <!-- </view> -->
       </view>
+    </block>
+  </view>
 
+  <view class='text_container'>
+    <view class="title">动态<view class="rec_jmp" bindtap="jump_news">查看更多</view>
+    </view>
+    <empty-item active="{{isContainerEmpty}}"></empty-item>
+    <block wx:for="{{infoList}}" wx:key="_id">
+      <view class='containerView' bindtap="toarticles" data-id="{{item._id}}" data-url="{{item.url}}">
+        <image-loader my-class='image' src='{{item.picture}}' mode='scaleToFill'></image-loader>
+        <view class='containerText'>{{item.title}}</view>
+      </view>
     </block>
   </view>
 

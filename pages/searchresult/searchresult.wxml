@@ -17,18 +17,18 @@
       <view>testinfo2</view> -->
     <!-- <view class='text_container' wx:if="{{!searchState}}">查询中</view> -->
     <loading hidden="{{searchState}}">加载中...</loading>
-    <view class="notfound" wx:if="{{!isFind&&searchState&&!firstState}}">
-      <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image>
+    <!-- <view class="notfound" wx:if="{{!isFind&&searchState&&!firstState}}"> -->
+      <!-- <image src='../../lib/images/notfound.png' style="width:200rpx;height:200rpx" mode="aspectFit"></image> -->
       <!-- <image src='../../lib/images/liuhan.jpg' style="width:500rpx;height:500rpx" mode="aspectFit"></image> -->
       <!-- <view style="color:grey">这jb谁啊</view> -->
-      <view style="color:grey">未找到结果</view>
-    </view>
+      <!-- <view style="color:grey">未找到结果</view> -->
+    <!-- </view> -->
+    <empty-item active="{{!isFind&&searchState&&!firstState}}"></empty-item>
     <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isFind&&searchState}}">
       <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
         <view class='flex_row'>
-          <image
-            src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
-            style="width:150rpx;height:150rpx" mode="scaleToFill"></image>
+          <image-loader my-class="teacher_img"
+            src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}" mode="scaleToFill"></image-loader>
           <view class="flex_col">
             <view>姓名:{{item.name}}</view>
             <view>单位:{{item.organization}}</view>

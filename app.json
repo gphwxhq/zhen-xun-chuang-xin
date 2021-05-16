@@ -1,14 +1,12 @@
 {
   "pages": [
-    
+    "pages/info/info",
+    "pages/findmore/findmore",
     "pages/index/index",
     "pages/searchresult/searchresult",
     "pages/details/details",
     "pages/event/event",
-    "pages/findmore/findmore",
-    "pages/info/info",
-    "pages/detailed_news/detailed_news",
-    "pages/tip/tip"
+    "pages/detailed_news/detailed_news"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -48,5 +46,9 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于按地理位置推荐导师"
     }
+  },
+  "usingComponents": {
+    "image-loader": "/components/image-loader/image-loader",
+    "empty-item":"/components/empty-item/empty-item"
   }
 }

@@ -1,9 +1,9 @@
 <!--pages/info/info.wxml-->
 <view class="main">
   <view class="info">
-    <image mode="scaleToFill"
+    <image-loader my-class="user_avatar" mode="scaleToFill"
       src="{{hasUserInfo?userInfo.avatarUrl:'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png'}}">
-    </image>
+    </image-loader>
     <view class="name">
       <view class="welcome">你好,</view>
       <view id="name">{{hasUserInfo?userInfo.nickName:'陌生人'}}</view>

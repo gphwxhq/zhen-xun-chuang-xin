@@ -15,16 +15,17 @@
   <!--swiper.wxml-->
   <swiper autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}" interval="6000">
     <swiper-item>
-      <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
-      <navigator url='{{item.link}}'>
-        <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
-      </navigator>
+      <!-- <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" /> -->
+      <image-loader mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_1.jpg" />
+      <!-- <navigator url='{{item.link}}'>
+        <image-loader src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
+      </navigator> -->
     </swiper-item>
     <swiper-item>
-      <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
+      <image-loader mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_2.jpg" />
     </swiper-item>
     <swiper-item>
-      <image mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
+      <image-loader mode="widthFix" src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/top_3.jpg" />
     </swiper-item>
   </swiper>
 
@@ -54,14 +55,14 @@
   <view class="tbody">
     <view class='text_container'>
       <view class="title">比赛信息</view>
-      <image class='tip_picture' src="../../lib/images/tip_0.png" bindtap="click_for_message"></image>
+      <image-loader my-class='tip_picture' src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/compete.png" bindtap="click_for_message"></image-loader>
     </view>
     <view class='text_container'>
-      <view class="title">动态<view bindtap="jump_news">查看更多</view>
-      </view>
+      <view class="title">动态<view bindtap="jump_news">查看更多</view></view>
+      <empty-item active="{{isContainerEmpty}}"></empty-item>
       <block wx:for="{{infoList}}" wx:key="_id">
         <view class='containerView' bindtap="toarticles" data-id="{{item._id}}" data-url="{{item.url}}">
-          <image class='image' src='{{item.picture}}' mode='scaleToFill'></image>
+          <image-loader my-class='image' src='{{item.picture}}' mode='scaleToFill'></image-loader>
           <view class='containerText'>{{item.title}}</view>
         </view>
       </block>

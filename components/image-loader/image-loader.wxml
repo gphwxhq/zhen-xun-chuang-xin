@@ -1,0 +1,5 @@
+<view class="my-class">
+<image wx:if='{{!finishLoadFlag}}' mode='{{mode}}' src='{{defaultImage}}' style='{{width ? "width:" + width : ""}};{{height ? "height:" + height : ""}}' class='my-class'/>
+<!-- <image mode='{{mode}}' class='{{finishLoadFlag ? "" : "before-load"}}' src='{{originalImage}}' bindload='finishLoad' style='{{finishLoadFlag && width ? "width:" + width : ""}};{{finishLoadFlag && height ? "height:" + height : ""}}' /> -->
+<image mode='{{mode}}' class='{{finishLoadFlag ? "my-class" : "before-load"}}' src='{{src}}' bindload='finishLoad' style='{{finishLoadFlag && width ? "width:" + width : ""}};{{finishLoadFlag && height ? "height:" + height : ""}}' />
+</view>

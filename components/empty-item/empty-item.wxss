@@ -1,0 +1,9 @@
+/* components/empty-item.wxss */
+.notfound{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  height: 500rpx;
+  font-size:medium;
+}
