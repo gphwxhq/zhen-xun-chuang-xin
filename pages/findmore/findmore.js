@@ -4,60 +4,14 @@ Page({
     isGetProvince: false,
     isContainerEmpty: false
   },
-  onAddToFavorites(res) {
-    // webview 页面返回 webViewUrl
-    console.log('webViewUrl: ', res.webViewUrl)
-    return {
-      title: '自定义标题',
-      imageUrl: '../../lib/images/tip_3.png',
-      query: 'name=xxx&age=xxx',
-    }
+  onPullDownRefresh: function () {
+    this.setData({
+      isGetProvince: false,
+      isContainerEmpty: false
+    })
+    this.onLoad()
+    wx.stopPullDownRefresh()
   },
-  onShareAppMessage(option){
-    // const promise = new Promise(resolve => {
-    //   setTimeout(() => {
-    //     resolve({
-    //       title: '自定义转发标题'
-    //     })
-    //   }, 2000)
-    // })
-    // return {
-    //   title: '自定义转发标题',
-    //   //path: '/page/user?id=123',
-    //   promise 
-    // }
-    let shareObj = {
-      　　　　title: "转发的标题",        
-      　　　　path: '/pages/share/share',        
-      　　　　imageUrl: '../../lib/images/tip_3.png',  
-      　　　　success: function(res){
-      　　　　　　// 转发成功之后的回调
-      　　　　　　if(res.errMsg == 'shareAppMessage:ok'){
-      　　　　　　}
-      　　　　},
-      　　　　fail: function(){
-      　　　　　　// 转发失败之后的回调
-      　　　　　　if(res.errMsg == 'shareAppMessage:fail cancel'){
-      　　　　　　　　// 用户取消转发
-      　　　　　　}else if(res.errMsg == 'shareAppMessage:fail'){
-      　　　　　　　　// 转发失败，其中 detail message 为详细失败信息
-      　　　　　　}
-      　　　　}
-    }
-    if(e.from=='button'){
-      let eData = options.target.dataset;
-　　　　console.log( eData.name );     // shareBtn
-　　　　// 此处可以修改 shareObj 中的内容
-　　　　shareObj.path = '/pages/btnname/btnname?btn_name='+eData.name;
-    }
-    return shareObj;
-  },
-  onShareTimeline:function(){
-    return{
-        title: "文字",
-        imageUrl:"图片地址"
-        }
-    },
   jump_news() {
     wx.navigateTo({
       url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
@@ -102,7 +56,7 @@ Page({
         console.log(res)
 
         wx.request({
-          url: 'https://api.map.baidu.com/reverse_geocoding/v3/', //仅为示例，并非真实的接口地址
+          url: 'https://api.map.baidu.com/reverse_geocoding/v3/',
           data: {
             ak: 'N1jI4G0nT0aDeMYLQQLfxGTTcO7MzoIa',
             output: 'json',
@@ -190,9 +144,22 @@ Page({
     })
   },
   to_tip_2(e) {
-    //let url='https://appjkeibaef6746.h5.xiaoeknow.com/homepage?entry=2&entry_type=2001'
-    wx.navigateTo({
-      url: 'https://appjkeibaef6746.h5.xiaoeknow.com/homepage?entry=2&entry_type=2001',
+    wx.showModal({
+      title: '打开课程网页',
+      content: '请复制链接至浏览器打开',
+      confirmText: '复制',
+      success(res) {
+        if (res.confirm) {
+          wx.setClipboardData({
+            data: 'https://appjkeibaef6746.h5.xiaoeknow.com/homepage?entry=2&entry_type=2001',
+            success: function (res) {
+              wx.showToast({
+                title: '复制成功'
+              })
+            }
+          })
+        }
+      }
     })
   }
 })

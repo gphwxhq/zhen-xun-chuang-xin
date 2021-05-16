@@ -46,7 +46,13 @@ Page({
   onLoad: function (options) {
     this.getarticles()
   },
-
+  onPullDownRefresh:function(){
+    this.setData({
+      isContainerEmpty:false 
+    })
+    this.onLoad()
+    wx.stopPullDownRefresh()
+  },
   /**
    * 公众号推文跳转
    */
