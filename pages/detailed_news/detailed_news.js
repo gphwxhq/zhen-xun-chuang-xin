@@ -1,6 +1,5 @@
 // pages/detailed_news/detailed_news.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -15,8 +14,8 @@ Page({
     })
   },
   toarticles: function (e) {
-    var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
-    var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
+    let id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
+    let url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
     //跳转并传参
     wx.navigateTo({
       url: '/pages/event/event?name=articles&url=' + url,
@@ -61,11 +60,11 @@ Page({
       }
     })
   },
-  click_for_detail(e) {
-    wx.navigateTo({
-      url: '../details/details?id=' + e.currentTarget.dataset.id,
-    })
-  },
+  // click_for_detail(e) {
+  //   wx.navigateTo({
+  //     url: '../details/details?id=' + e.currentTarget.dataset.id,
+  //   })
+  // },
   toarticles: function (e) {
     var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
     var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接

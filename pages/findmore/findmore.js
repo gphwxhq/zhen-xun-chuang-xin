@@ -1,17 +1,17 @@
 // pages/findmore/findmore.js
 Page({
-  data:{
-    isGetProvince:false,
-    isContainerEmpty:false
+  data: {
+    isGetProvince: false,
+    isContainerEmpty: false
   },
-  jump_news(){
+  jump_news() {
     wx.navigateTo({
       url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
     })
-  }, 
+  },
   toarticles: function (e) {
-    var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
-    var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
+    var id = e.currentTarget.dataset.id; // 获取点击的推文的数组下标
+    var url = e.currentTarget.dataset.url; // 通过id判断是哪个推文的链接
     //跳转并传参
     wx.navigateTo({
       url: '../event/event?url=' + url,
@@ -22,16 +22,16 @@ Page({
     wx.cloud.callFunction({
       name: "readarticle",
       data: {
-        pageNum:1
+        pageNum: 1
       },
       success: function (res) {
         self.setData({
-          infoList:res.result
+          infoList: res.result
         })
       },
       fail: function (res) {
         self.setData({
-          isContainerEmpty:true
+          isContainerEmpty: true
         })
         console.log(res)
       }
@@ -89,7 +89,7 @@ Page({
               }
             })
           },
-          fail:function(res) {
+          fail: function (res) {
             console.log(res)
             self.setData({
               isGetProvince: false
@@ -123,9 +123,21 @@ Page({
       url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"' + this.data.province + '","pageNum":1}',
     })
   },
-  to_tips(e){
+  to_tip_1(e) {
+    let url = 'https://mp.weixin.qq.com/s/yQpKosfpv80Q47WggnXqbQ'
     wx.navigateTo({
-      url: '../event/event',
+      url: '../event/event?url=' + url,
+    })
+  },
+  to_tip_2(e) {
+    let url = 'https://mp.weixin.qq.com/s/GKn1BW318qoT0ZDDRg49EA'
+    wx.navigateTo({
+      url: '../event/event?url=' + url,
+    })
+  },
+  to_tip_3(e) {
+    wx.navigateTo({
+      url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
     })
   }
 })
