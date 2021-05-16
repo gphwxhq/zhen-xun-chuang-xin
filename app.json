@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/findmore/findmore",
+    
     "pages/index/index",
     "pages/info/info",
-    
+    "pages/findmore/findmore",
     "pages/searchresult/searchresult",
     "pages/details/details",
     "pages/event/event",

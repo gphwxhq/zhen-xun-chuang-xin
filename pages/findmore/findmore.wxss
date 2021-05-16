@@ -37,6 +37,21 @@
   background-color: #c0c0c0;
   height: 80%;
 }
+.tips_col button{
+  
+  border:0;
+  width: 156rpx !important;
+  height: 120rpx;
+  align-items: center;
+  background-color: white;
+}
+.button image{
+  width: 100rpx;
+  height: 100rpx;
+  align-items: center;
+  display: flex;
+  justify-content: left;
+}
 .recommend {
   display: flex;
   flex-direction: column;

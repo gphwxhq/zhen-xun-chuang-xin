@@ -12,8 +12,10 @@
       <view>微创课堂</view>
     </view>
     <view class="line"></view>
-    <view class="tips_col" bindtap='to_tip_3'>
-      <image src="../../lib/images/tip_3.png" mode="scaleToFill"></image>
+    <view class="tips_col" >
+      <button data-name="shareBt" open-type="share" plain='true' style="position: relative; left: -40rpx; top: 0rpx; width: 104rpx; height: 120rpx; display: block; box-sizing: border-box">
+        <image src="../../lib/images/tip_3.png" mode="scaleToFill"></image>
+      </button>
       <view>随想转发</view>
     </view>
   </view>

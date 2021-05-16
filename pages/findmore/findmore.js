@@ -4,6 +4,60 @@ Page({
     isGetProvince: false,
     isContainerEmpty: false
   },
+  onAddToFavorites(res) {
+    // webview 页面返回 webViewUrl
+    console.log('webViewUrl: ', res.webViewUrl)
+    return {
+      title: '自定义标题',
+      imageUrl: '../../lib/images/tip_3.png',
+      query: 'name=xxx&age=xxx',
+    }
+  },
+  onShareAppMessage(option){
+    // const promise = new Promise(resolve => {
+    //   setTimeout(() => {
+    //     resolve({
+    //       title: '自定义转发标题'
+    //     })
+    //   }, 2000)
+    // })
+    // return {
+    //   title: '自定义转发标题',
+    //   //path: '/page/user?id=123',
+    //   promise 
+    // }
+    let shareObj = {
+      　　　　title: "转发的标题",        
+      　　　　path: '/pages/share/share',        
+      　　　　imageUrl: '../../lib/images/tip_3.png',  
+      　　　　success: function(res){
+      　　　　　　// 转发成功之后的回调
+      　　　　　　if(res.errMsg == 'shareAppMessage:ok'){
+      　　　　　　}
+      　　　　},
+      　　　　fail: function(){
+      　　　　　　// 转发失败之后的回调
+      　　　　　　if(res.errMsg == 'shareAppMessage:fail cancel'){
+      　　　　　　　　// 用户取消转发
+      　　　　　　}else if(res.errMsg == 'shareAppMessage:fail'){
+      　　　　　　　　// 转发失败，其中 detail message 为详细失败信息
+      　　　　　　}
+      　　　　}
+    }
+    if(e.from=='button'){
+      let eData = options.target.dataset;
+　　　　console.log( eData.name );     // shareBtn
+　　　　// 此处可以修改 shareObj 中的内容
+　　　　shareObj.path = '/pages/btnname/btnname?btn_name='+eData.name;
+    }
+    return shareObj;
+  },
+  onShareTimeline:function(){
+    return{
+        title: "文字",
+        imageUrl:"图片地址"
+        }
+    },
   jump_news() {
     wx.navigateTo({
       url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
@@ -124,7 +178,7 @@ Page({
     })
   },
   to_tip_1(e) {
-    let url = 'https://mp.weixin.qq.com/s/yQpKosfpv80Q47WggnXqbQ'
+    let url = 'https://mp.weixin.qq.com/mp/homepage?__biz=MzI5ODM1OTI5NA==&hid=11&sn=a3c2e8ccd62ba13c39ef173b482f44fa&scene=18#wechat_redirect'
     wx.navigateTo({
       url: '../event/event?url=' + url,
     })
