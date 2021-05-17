@@ -53,7 +53,7 @@ Page({
       success(res) {
         const latitude = res.latitude
         const longitude = res.longitude
-        console.log(res)
+        // console.log(res)
 
         wx.request({
           url: 'https://api.map.baidu.com/reverse_geocoding/v3/',
@@ -64,12 +64,12 @@ Page({
             location: latitude + ',' + longitude
           },
           success(res) {
-            console.log(res)
+            // console.log(res)
             self.setData({
               isGetProvince: true,
               province: res.data.result.addressComponent.province
             })
-            console.log(self.data.province)
+            // console.log(self.data.province)
             wx.cloud.callFunction({
               name: "searchDB",
               data: {
@@ -83,7 +83,7 @@ Page({
                   return
                 }
                 if (res.result.length != 0) {
-                  console.log(res)
+                  // console.log(res)
                   self.setData({
                     resultList: res.result
                   })

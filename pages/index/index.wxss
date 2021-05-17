@@ -20,7 +20,7 @@
   /* margin: 0 auto; */
   /* height: 68rpx; */
   -webkit-overflow-scrolling: touch;
-  background: #ffff;
+  background: #eeeeee;
   border-radius: 32rpx;
   padding-left: 10rpx;
   box-sizing: border-box;

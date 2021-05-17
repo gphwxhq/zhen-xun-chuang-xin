@@ -68,7 +68,7 @@ Page({
             resultList: self.data.resultList.concat(res.result)
           })
 
-          console.log(self.data.resultList)
+          // console.log(self.data.resultList)
         } else {
           self.setData({
             searchState: true,
@@ -106,7 +106,7 @@ Page({
       pageNum: this.data.pageNum += 1,
       afterSearchState: true
     })
-    console.log(this.data.pageNum)
+    // console.log(this.data.pageNum)
     let self = this
     wx.cloud.callFunction({
       name: self.data.searchParams[self.data.mode],
@@ -130,7 +130,7 @@ Page({
             resultList: self.data.resultList.concat(res.result),
             afterSearchState: false
           })
-          console.log(self.data.resultList)
+          // console.log(self.data.resultList)
         } else {
           self.setData({
             isFinish: true,

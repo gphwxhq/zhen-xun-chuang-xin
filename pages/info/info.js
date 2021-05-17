@@ -15,7 +15,7 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res)
+        // console.log(res)
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -41,7 +41,7 @@ Page({
       {opacity:1}
       ], 500, function () {
         this.clearAnimation('.info', function () {
-          console.log("清除了info上的动画")
+          // console.log("清除了info上的动画")
         })
     }.bind(this))
   },
@@ -51,7 +51,7 @@ Page({
       name: "getMotto",
       data: {},
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         self.setData({
           motto:res.result
         })

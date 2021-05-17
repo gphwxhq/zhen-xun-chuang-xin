@@ -2,7 +2,7 @@
 Page({
   onAddToFavorites(res) {
     // webview 页面返回 webViewUrl
-    console.log('webViewUrl: ', res.webViewUrl)
+    // console.log('webViewUrl: ', res.webViewUrl)
     return {
       title: '自定义标题',
       imageUrl: '../../lib/images/tip_3.png',
@@ -42,7 +42,7 @@ Page({
     }
     if(e.from=='button'){
       let eData = options.target.dataset;
-　　　　console.log( eData.name );     // shareBtn
+// 　　　　console.log( eData.name );     // shareBtn
 　　　　// 此处可以修改 shareObj 中的内容
 　　　　shareObj.path = '/pages/btnname/btnname?btn_name='+eData.name;
     }
@@ -82,7 +82,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
+    // console.log(options.id)
     this.setData({
       id: options.id
     })
@@ -102,7 +102,7 @@ Page({
           return
         }
         let data = res.result[0]
-        console.log(data)
+        // console.log(data)
         wx.setNavigationBarTitle({
           title: data.name
         })
@@ -157,7 +157,7 @@ Page({
       {height:'240rpx'}
       ], 500, function () {
         this.clearAnimation('.checked_button', function () {
-          console.log("清除了checked_button上的动画")
+          // console.log("清除了checked_button上的动画")
         })
     }.bind(this))
   },
@@ -177,7 +177,7 @@ Page({
       {opacity:1}
       ], 500, function () {
         this.clearAnimation('.text_container', function () {
-          console.log("清除了text_container上的动画")
+          // console.log("清除了text_container上的动画")
         })
     }.bind(this))
   },

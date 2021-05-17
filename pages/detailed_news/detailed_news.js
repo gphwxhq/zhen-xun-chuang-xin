@@ -29,7 +29,7 @@ Page({
     let functionName = options.functionName
     let params = JSON.parse(options.params)
     let title=options.title
-    console.log(params)
+    // console.log(params)
     wx.setNavigationBarTitle({
       title: title
     })
@@ -122,7 +122,7 @@ Page({
       isLoading:true,
       ['params.pageNum']: this.data.params.pageNum + 1
     })
-    console.log(this.data.params.pageNum)
+    // console.log(this.data.params.pageNum)
     let self = this
     wx.cloud.callFunction({
       name: this.data.functionName,
@@ -140,7 +140,7 @@ Page({
           infoList: self.data.infoList.concat(res.result) ,
           isLoading:false
         })
-        console.log(res)
+        // console.log(res)
       },
       fail: function (res) {
         console.log(res)

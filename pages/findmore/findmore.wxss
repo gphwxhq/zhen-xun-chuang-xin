@@ -7,7 +7,7 @@
 
 .tbody {
   position: relative;
-  background-color: rgb(194, 194, 194);
+  background-color: #eeeeee;
   width: 100%;
   /* padding-left: 10rpx;
   padding-right: 10rpx; */

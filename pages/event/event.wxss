@@ -1,6 +1,6 @@
 /* pages/events/event.wxss */
 page{
-  background:#cccccc
+  background:#eeeeee;
   
 }
 .image{
