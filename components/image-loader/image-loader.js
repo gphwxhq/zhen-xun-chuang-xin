@@ -33,7 +33,7 @@ Component({
         }
       ], 1000, function () {
         this.clearAnimation('.my-class', function () {
-          console.log("清除了my-class上的动画")
+          // console.log("清除了my-class上的动画")
         })
       }.bind(this))
     },
