@@ -119,6 +119,7 @@ page {
   padding-left: 20rpx;
   /* font-size: small; */
   border-bottom: solid #c0c0c0 1px;
+  padding:10rpx;
 }
 .row_button view {
   font-weight: normal;
