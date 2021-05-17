@@ -11,7 +11,7 @@ Page({
     pageNum: 1,
     isFinish: false,
     afterSearchState: false,
-    pageInterval:[7,13]
+    pageInterval:[7,16]
   },
   onLoad:function (options) {
     this.setData({

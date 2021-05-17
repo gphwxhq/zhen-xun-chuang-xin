@@ -6,7 +6,7 @@ Page({
   data: {
     isLoading:false,
     isFinish: false,
-    pageInterval:7,
+    pageInterval:8,
     isEmpty:false
   },
   click_for_detail(e) {

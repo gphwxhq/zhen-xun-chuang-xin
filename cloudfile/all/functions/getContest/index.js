@@ -8,7 +8,7 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let pageInterval = 13
+  let pageInterval = 16
   let mskip = event.pageNum > 1 ? (event.pageNum - 1) * pageInterval : 0
   let res = await db.collection("contests").where({
     "name": db.RegExp({
