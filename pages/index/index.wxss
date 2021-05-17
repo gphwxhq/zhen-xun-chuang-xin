@@ -146,7 +146,7 @@ swiper-item {
 
 .image {
   width: 240rpx;
-  height: 160rpx;
+  height: 130rpx;
 }
 
 

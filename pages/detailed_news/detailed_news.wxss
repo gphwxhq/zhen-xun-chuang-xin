@@ -36,7 +36,7 @@
 
 .image {
   width: 240rpx;
-  height: 160rpx;
+  height: 130rpx;
 }
 
 .flex_row {
