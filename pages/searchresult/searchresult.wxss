@@ -32,8 +32,8 @@
   background-color: rgb(255, 255, 255);
   margin-left: 10rpx;
   margin-right:10rpx;
-  margin-bottom: 10rpx;
-  padding:5rpx;
+  /* margin-bottom: 10rpx; */
+  /* padding:5rpx; */
   /* height: 500rpx; */
 }
 .content{
@@ -58,6 +58,8 @@
   display: flex;
   flex-direction: row;
   justify-content:left;
+  padding-bottom: 5rpx;
+  border-bottom: solid #c0c0c0 1px;
 }
 .teacher_img{
   width:150rpx;

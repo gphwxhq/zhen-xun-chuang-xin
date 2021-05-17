@@ -54,7 +54,7 @@
 </view> -->
   <view class="tbody">
     <view class='text_container'>
-      <view class="title">比赛信息</view>
+      <view class="title">项目案例检索</view>
       <image-loader my-class='tip_picture' src="cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/compete.png" bindtap="click_for_message"></image-loader>
     </view>
     <view class='text_container'>

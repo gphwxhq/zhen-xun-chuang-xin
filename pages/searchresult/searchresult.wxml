@@ -5,7 +5,7 @@
     <view class="searchBlock">
       <view class="searchInput">
         <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
-        <input id="searchInput" name="search_item" focus="true" placeholder="导师姓名/领域/地区" bindconfirm="searchBox"></input>
+        <input id="searchInput" name="search_item" focus="true" placeholder="{{mode==0?'导师姓名/领域/地区':'项目名称'}}" bindconfirm="searchBox"></input>
       </view>
       <button check id="submitBtn" form-type="submit" disabled="{{!searchState}}">{{!searchState?'查询中':'查询'}}</button>
     </view>
@@ -25,7 +25,7 @@
     <!-- </view> -->
     <empty-item active="{{!isFind&&searchState&&!firstState}}"></empty-item>
     <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isFind&&searchState}}">
-      <view class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
+      <view wx:if="{{mode==0}}" class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
         <view class='flex_row'>
           <image-loader my-class="teacher_img"
             src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}" mode="scaleToFill"></image-loader>
@@ -34,9 +34,14 @@
             <view>单位:{{item.organization}}</view>
           </view>
         </view>
-        <view class="divLine"></view>
+        <!-- <view class="divLine"></view> -->
       </view>
-
+      <view wx:if="{{mode==1}}" class='text_container' bindtap='click_for_detail' data-url='{{item.link}}'>
+        <view class='flex_row'>
+            <view>{{item.name}}</view>
+        </view>
+        <!-- <view class="divLine"></view> -->
+      </view>
     </block>
     <view class="loading_state">
       <view wx:if="{{isFind&&searchState&&afterSearchState}}">加载中</view>

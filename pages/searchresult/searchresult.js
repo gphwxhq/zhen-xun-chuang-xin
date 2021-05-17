@@ -11,7 +11,13 @@ Page({
     pageNum: 1,
     isFinish: false,
     afterSearchState: false,
-    pageInterval:7
+    pageInterval:[7,13]
+  },
+  onLoad:function (options) {
+    this.setData({
+      mode:options.mode
+    })
+    
   },
   searchBox(e) {
     let search_name = e.detail.value.search_item == null ? e.detail.value : e.detail.value.search_item
@@ -32,11 +38,12 @@ Page({
       resultList: [],
       pageNum: 1,
       isFinish: false,
-      afterSearchState: false
+      afterSearchState: false,
+      searchParams:['searchDB','getContest']
     })
     let self = this
     wx.cloud.callFunction({
-      name: "searchDB",
+      name: self.data.searchParams[self.data.mode],
       data: {
         name: search_name,
         pageNum: self.data.pageNum
@@ -48,7 +55,7 @@ Page({
         }
         if (res.result.length != 0) {
           // console.log(res)
-          if (res.result.length < self.data.pageInterval)
+          if (res.result.length < self.data.pageInterval[self.data.mode])
             self.setData({
               isFinish: true
             })
@@ -82,10 +89,15 @@ Page({
     // })
   },
   click_for_detail(e) {
+    if(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../details/details?id=' + e.currentTarget.dataset.id,
     })
-  },
+    else if( e.currentTarget.dataset.url)
+      wx.navigateTo({
+        url: '../event/event?url='+ e.currentTarget.dataset.url
+      })
+    },
   onReachBottom: function () {
     // console.log('on')
     if (this.data.isFinish || !this.data.isFind||this.data.afterSearchState)
@@ -97,7 +109,7 @@ Page({
     console.log(this.data.pageNum)
     let self = this
     wx.cloud.callFunction({
-      name: "searchDB",
+      name: self.data.searchParams[self.data.mode],
       data: {
         name: self.data.searchName,
         pageNum: self.data.pageNum
@@ -110,7 +122,7 @@ Page({
         }
         if (res.result.length != 0) {
           // console.log(res)
-          if (res.result.length < self.data.pageInterval)
+          if (res.result.length < self.data.pageInterval[self.data.mode])
             self.setData({
               isFinish: true
             })

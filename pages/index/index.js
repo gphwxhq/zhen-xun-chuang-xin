@@ -8,7 +8,7 @@ Page({
   },
   jmp_search() {
     wx.navigateTo({
-      url: '../searchresult/searchresult',
+      url: '../searchresult/searchresult?mode=0',
     })
   },
   click_for_event() {
@@ -65,9 +65,12 @@ Page({
     })
   },
   click_for_message(e) {
-    let url = 'https://mp.weixin.qq.com/s/yQpKosfpv80Q47WggnXqbQ'
+    // let url = 'https://mp.weixin.qq.com/s/yQpKosfpv80Q47WggnXqbQ'
+    // wx.navigateTo({
+    //   url: '../event/event?url=' + url,
+    // })
     wx.navigateTo({
-      url: '../event/event?url=' + url,
+      url: '../searchresult/searchresult?mode=1',
     })
   },
 

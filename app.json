@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/details/details",
     "pages/index/index",
+    "pages/details/details",
     "pages/info/info",
     "pages/findmore/findmore",
     "pages/searchresult/searchresult",
-    
     "pages/event/event",
     "pages/detailed_news/detailed_news"
   ],
