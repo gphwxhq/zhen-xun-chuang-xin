@@ -17,6 +17,9 @@ Page({
     this.setData({
       mode:options.mode
     })
+    wx.setNavigationBarTitle({
+      title: options.mode==0?"导师查询":"项目查询"
+    })
     
   },
   searchBox(e) {
