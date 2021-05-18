@@ -161,5 +161,21 @@ Page({
         }
       }
     })
-  }
+  },
+  
+  onAddToFavorites(res) {
+    return {
+      imageUrl: '/lib/images/logo.png'
+    }
+  },
+  onShareAppMessage(option){
+    return {
+      imageUrl: '/lib/images/logo.png'
+    }
+  },
+  onShareTimeline(){
+    return{
+      imageUrl: '/lib/images/logo.png'       
+        }
+    }
 })

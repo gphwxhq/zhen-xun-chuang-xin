@@ -4,9 +4,9 @@ Page({
     // webview 页面返回 webViewUrl
     // console.log('webViewUrl: ', res.webViewUrl)
     return {
-      title: '自定义标题',
-      imageUrl: '../../lib/images/tip_3.png',
-      query: 'name=xxx&age=xxx',
+      title: '创新创业导师：'+this.data.name,
+      imageUrl: this.data.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':this.data.link,
+      query: 'id='+this.data.id,
     }
   },
   onShareAppMessage(option){
@@ -17,41 +17,18 @@ Page({
     //     })
     //   }, 2000)
     // })
-    // return {
-    //   title: '自定义转发标题',
-    //   //path: '/page/user?id=123',
-    //   promise 
-    // }
-    let shareObj = {
-      　　　　title: "转发的标题",        
-      　　　　path: '/pages/share/share',        
-      　　　　imageUrl: '../../lib/images/tip_3.png',  
-      　　　　success: function(res){
-      　　　　　　// 转发成功之后的回调
-      　　　　　　if(res.errMsg == 'shareAppMessage:ok'){
-      　　　　　　}
-      　　　　},
-      　　　　fail: function(){
-      　　　　　　// 转发失败之后的回调
-      　　　　　　if(res.errMsg == 'shareAppMessage:fail cancel'){
-      　　　　　　　　// 用户取消转发
-      　　　　　　}else if(res.errMsg == 'shareAppMessage:fail'){
-      　　　　　　　　// 转发失败，其中 detail message 为详细失败信息
-      　　　　　　}
-      　　　　}
+    return {
+      title: '创新创业导师：'+this.data.name,
+      imageUrl: this.data.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':this.data.link,
+      path: '/pages/details/details?id='+this.data.id,
     }
-    if(e.from=='button'){
-      let eData = options.target.dataset;
-// 　　　　console.log( eData.name );     // shareBtn
-　　　　// 此处可以修改 shareObj 中的内容
-　　　　shareObj.path = '/pages/btnname/btnname?btn_name='+eData.name;
-    }
-    return shareObj;
+    
   },
-  onShareTimeline:function(){
+  onShareTimeline(){
     return{
-        title: "文字",
-        imageUrl:"图片地址"
+        title: '创新创业导师：'+this.data.name,
+        imageUrl:this.data.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':this.data.link,
+        query:'id='+this.data.id        
         }
     },
   /**
@@ -82,7 +59,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options.id)
+    console.log(options.id)
     this.setData({
       id: options.id
     })
@@ -234,10 +211,4 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
