@@ -42,6 +42,8 @@
 .flex_row {
   padding-left: 10rpx;
   padding-right: 10rpx;
+  padding-top:5rpx;
+  padding-bottom:5rpx;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -49,8 +51,8 @@
   border-bottom: solid 1rpx #c0c0c0;
 }
 .teacher_img{
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
+  /* padding-top: 10rpx;
+  padding-bottom: 10rpx; */
   width:150rpx;
   height:150rpx;
 }
