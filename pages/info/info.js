@@ -20,11 +20,11 @@ Page({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
-        this.showFadeinInfo()
+        this.showFadeinItem('.info')
       },
       fail: (res) => {
         console.log(res)
-        this.showFadeinInfo()
+        this.showFadeinItem('.info')
       }
     })
     
@@ -35,12 +35,12 @@ Page({
       {opacity:0}
       ], 500)
   },
-  showFadeinInfo(){
-    this.animate('.info', [
+  showFadeinItem(e){
+    this.animate(e, [
       {opacity:0},
       {opacity:1}
       ], 500, function () {
-        this.clearAnimation('.info', function () {
+        this.clearAnimation(e, function () {
           // console.log("清除了info上的动画")
         })
     }.bind(this))
@@ -52,6 +52,7 @@ Page({
       data: {},
       success: function (res) {
         // console.log(res)
+        self.showFadeinItem('.motto')
         self.setData({
           motto:res.result
         })
