@@ -1,6 +1,6 @@
 <!--index.wxml-->
 
-<view>
+<view class="top_bar">
   <form bindsubmit='searchBox'>
     <view class="searchBlock">
       <view class="searchInput">
@@ -31,7 +31,7 @@
             src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}" mode="scaleToFill"></image-loader>
           <view class="flex_col">
             <view>{{item.name}}</view> 
-            <view style="font-size:small;color:grey">{{item.organization}}</view>
+            <view class="detail">{{item.organization}}</view>
           </view>
         </view>
         <!-- <view class="divLine"></view> -->

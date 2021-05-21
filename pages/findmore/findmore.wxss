@@ -147,3 +147,13 @@
   /* text-align: center; */
   /* background-color: red; */
 }
+.detail{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size:small;
+  color:grey
+}

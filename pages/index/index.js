@@ -79,17 +79,17 @@ Page({
    */
   onAddToFavorites(res) {
     return {
-      imageUrl: '/lib/images/logo.png'
+      imageUrl: 'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/share_logo.jpg'
     }
   },
   onShareAppMessage(option){
     return {
-      imageUrl: '/lib/images/logo.png'
+      imageUrl: 'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/share_logo.jpg'
     }
   },
   onShareTimeline(){
     return{
-      imageUrl: '/lib/images/logo.png'       
+      imageUrl: 'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/share_logo.jpg'       
         }
     },
 })

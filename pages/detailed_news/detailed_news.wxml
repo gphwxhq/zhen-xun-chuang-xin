@@ -14,7 +14,7 @@
         mode="scaleToFill"></image-loader>
       <view class="flex_col">
         <view>{{item.name}}</view> 
-        <view style="font-size:small;color:grey">{{item.organization}}</view>
+        <view class="detail">{{item.organization}}</view>
       </view>
       <!-- </view> -->
     </view>

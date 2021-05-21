@@ -7,7 +7,7 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let pageInterval = 8
+  let pageInterval = 9
   let mskip = event.pageNum > 1 ? (event.pageNum - 1) * pageInterval : 0
   let res = await cloud.database().collection("articles").field({
     "picture": true,

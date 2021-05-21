@@ -1,6 +1,10 @@
 /**index.wxss**/
 
-
+.top_bar{
+  position: fixed;
+  width: 100%;
+  top:0;
+}
 .searchBlock{
   display: flex;
   align-items: center;
@@ -22,7 +26,7 @@
 .tbody{
   /* background-color: rgb(194, 194, 194); */
   width:100%;
-  padding-top:7rpx;
+  padding-top:90rpx;
   padding-bottom: 10rpx;
   height:100%;
 }
@@ -80,6 +84,16 @@
 .loading_state{
   text-align: center;
   color: grey;
+}
+.detail{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size:small;
+    color:grey
 }
 #submitBtn{
   position: relative;

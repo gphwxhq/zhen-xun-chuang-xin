@@ -17,34 +17,6 @@ Page({
       url: '../detailed_news/detailed_news?title=动态&functionName=readarticle&params={"pageNum":1}',
     })
   },
-  // toarticles: function (e) {
-  //   var id = e.currentTarget.dataset.id; // 获取点击的推文的数组下标
-  //   var url = e.currentTarget.dataset.url; // 通过id判断是哪个推文的链接
-  //   //跳转并传参
-  //   wx.navigateTo({
-  //     url: '../event/event?url=' + url,
-  //   })
-  // },
-  // getarticles() {
-  //   let self = this
-  //   wx.cloud.callFunction({
-  //     name: "readarticle",
-  //     data: {
-  //       pageNum: 1
-  //     },
-  //     success: function (res) {
-  //       self.setData({
-  //         infoList: res.result
-  //       })
-  //     },
-  //     fail: function (res) {
-  //       self.setData({
-  //         isContainerEmpty: true
-  //       })
-  //       console.log(res)
-  //     }
-  //   })
-  // },
   get_courses() {
     let self = this
     wx.cloud.callFunction({
@@ -185,17 +157,17 @@ Page({
   
   onAddToFavorites(res) {
     return {
-      imageUrl: '/lib/images/logo.png'
+      imageUrl: 'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/share_logo.jpg'
     }
   },
   onShareAppMessage(option){
     return {
-      imageUrl: '/lib/images/logo.png'
+      imageUrl: 'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/share_logo.jpg'
     }
   },
   onShareTimeline(){
     return{
-      imageUrl: '/lib/images/logo.png'       
+      imageUrl: 'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/src/share_logo.jpg'       
         }
     }
 })

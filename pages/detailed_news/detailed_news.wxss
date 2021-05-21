@@ -71,3 +71,13 @@
   text-align: center;
   color: grey;
 }
+.detail{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size:small;
+  color:grey
+}
