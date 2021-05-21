@@ -41,7 +41,7 @@
   </view>
 
   <view class='text_container'>
-    <view class="title">动态<view class="rec_jmp" bindtap="jump_news">查看更多</view>
+    <view class="title">创新创业课堂<view class="rec_jmp" bindtap="to_tip_2">查看更多</view>
     </view>
     <empty-item active="{{isContainerEmpty}}"></empty-item>
     <block wx:for="{{infoList}}" wx:key="_id">
