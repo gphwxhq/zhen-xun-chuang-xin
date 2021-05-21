@@ -13,8 +13,8 @@
         src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
         mode="scaleToFill"></image-loader>
       <view class="flex_col">
-        <view>姓名:{{item.name}}</view>
-        <view>单位:{{item.organization}}</view>
+        <view>{{item.name}}</view> 
+        <view style="font-size:small;color:grey">{{item.organization}}</view>
       </view>
       <!-- </view> -->
     </view>
