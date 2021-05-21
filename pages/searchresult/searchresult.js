@@ -11,7 +11,6 @@ Page({
     pageNum: 1,
     isFinish: false,
     afterSearchState: false,
-    pageInterval:[9,16]
   },
   onLoad:function (options) {
     this.setData({
@@ -56,9 +55,9 @@ Page({
           console.log(res)
           return
         }
-        if (res.result.length != 0) {
+        if (res.result[0].length != 0) {
           // console.log(res)
-          if (res.result.length < self.data.pageInterval[self.data.mode])
+          if (res.result[0].length < res.result[1])
             self.setData({
               isFinish: true
             })
@@ -68,7 +67,7 @@ Page({
             // name: res.result.name,
             // dep: res.result.dep,
             // oth: res.result.oth 
-            resultList: self.data.resultList.concat(res.result)
+            resultList: self.data.resultList.concat(res.result[0])
           })
 
           // console.log(self.data.resultList)
@@ -123,14 +122,14 @@ Page({
           console.log(res)
           return
         }
-        if (res.result.length != 0) {
+        if (res.result[0].length != 0) {
           // console.log(res)
-          if (res.result.length < self.data.pageInterval[self.data.mode])
+          if (res.result[0].length < res.result[1])
             self.setData({
               isFinish: true
             })
           self.setData({
-            resultList: self.data.resultList.concat(res.result),
+            resultList: self.data.resultList.concat(res.result[0]),
             afterSearchState: false
           })
           // console.log(self.data.resultList)

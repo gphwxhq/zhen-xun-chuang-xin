@@ -16,5 +16,5 @@ exports.main = async (event, context) => {
       options: 'i'
     })
   }).limit(pageInterval).skip(mskip).get()
-  return res.data
+  return [res.data,pageInterval]
 }

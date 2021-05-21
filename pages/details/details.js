@@ -78,7 +78,7 @@ Page({
           console.log(res)
           return
         }
-        let data = res.result[0]
+        let data = res.result[0][0]
         // console.log(data)
         wx.setNavigationBarTitle({
           title: data.name

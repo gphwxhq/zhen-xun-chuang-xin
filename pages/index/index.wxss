@@ -128,8 +128,8 @@ swiper-item {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
   border-bottom: solid 1rpx #c0c0c0;
 }
 

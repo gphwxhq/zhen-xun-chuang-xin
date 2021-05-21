@@ -58,7 +58,6 @@ Page({
           success(res) {
             // console.log(res)
             self.setData({
-              isGetProvince: true,
               province: res.data.result.addressComponent.province
             })
             // console.log(self.data.province)
@@ -66,7 +65,7 @@ Page({
               name: "searchDB",
               data: {
                 province: self.data.province,
-                pageNum: 1
+                pageNum: 0
               },
               success: function (res) {
                 // console.log(res)
@@ -74,10 +73,11 @@ Page({
                   console.log(res)
                   return
                 }
-                if (res.result.length != 0) {
+                if (res.result[0].length != 0) {
                   // console.log(res)
                   self.setData({
-                    resultList: res.result
+                    isGetProvince: true,
+                    resultList: res.result[0]
                   })
                 }
               },

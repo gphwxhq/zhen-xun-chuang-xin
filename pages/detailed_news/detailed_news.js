@@ -6,7 +6,6 @@ Page({
   data: {
     isLoading:false,
     isFinish: false,
-    pageInterval:9,
     isEmpty:false
   },
   click_for_detail(e) {
@@ -48,9 +47,9 @@ Page({
           return
         }
         self.setData({
-          infoList: res.result
+          infoList: res.result[0]
         })
-        if (res.result.length < self.data.pageInterval)
+        if (res.result[0].length <res.result[1])
           self.setData({
             isFinish: true
           })
@@ -132,12 +131,12 @@ Page({
           console.log(res)
           return
         }
-        if (res.result.length < self.data.pageInterval)
+        if (res.result[0].length < res.result[1])
           self.setData({
             isFinish: true
           })
         self.setData({
-          infoList: self.data.infoList.concat(res.result) ,
+          infoList: self.data.infoList.concat(res.result[0]) ,
           isLoading:false
         })
         // console.log(res)

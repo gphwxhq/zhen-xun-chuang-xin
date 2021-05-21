@@ -26,11 +26,11 @@ Page({
     wx.cloud.callFunction({
       name: "readarticle",
       data: {
-        pageNum: 1
+        pageNum: 0
       },
       success: function (res) {
         self.setData({
-          infoList: res.result
+          infoList: res.result[0]
         })
 
       },

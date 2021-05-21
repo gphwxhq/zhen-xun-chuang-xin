@@ -9,7 +9,7 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  let pageInterval = 9
+  let pageInterval = event.pageNum==0||event.pageNum==null?5:10
   if (event.pageNum != null && event.name != null) {
     let mskip = event.pageNum > 1 ? (event.pageNum - 1) * pageInterval : 0
     var res = await db.collection("teachers").field({
@@ -52,5 +52,5 @@ exports.main = async (event, context) => {
     }).limit(pageInterval).skip(mskip).get()
   } else
     return null
-  return res.data
+  return [res.data,pageInterval]
 }
