@@ -1,6 +1,6 @@
 <!--pages/detailed_news/detailed_news.wxml-->
 <view class='text_container'>
-  <view class="title">{{title}}</view>
+  <!-- <view class="title">{{title}}</view> -->
 <empty-item active="{{isEmpty}}"></empty-item>
   <block wx:for="{{infoList}}" wx:key="_id">
     <view wx:if="{{title=='动态'}}" class='containerView' bindtap="toarticles" data-id="{{item._id}}"

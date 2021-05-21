@@ -135,6 +135,12 @@ swiper-item {
 
 .containerText {
   width: 480rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   /* text-align: center; */
   /* background-color: red; */
 }
