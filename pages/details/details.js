@@ -106,7 +106,8 @@ Page({
           // patent: data.patent,
           // speech: data.speech,
           // title: data.title,
-          subjects: [{"姓名：" : data.name, "性别：" : data.gender, "民族：" : data.nation, "学历：" : data.graduated, "年龄：" : data.age, "出生日期：" : data.birthday, "联系方式：" : data.contact, "研究方向:" : data.direction}, {"指导项目及获奖情况：" : data.awards, "创新创业领域的经历结果和成就:" : data.achievement}, {"工作单位：" : data.organization, "职位:" : data.job, "职称：" : data.title, "毕业院校：" : data.graduated},{"专利：" : data.patent, "论文发表情况:" : data.papers}, {"公开场合发表演讲：" : data.speech, "教育经历:" : data.experience, "个人自媒体:" : data.media, "自建课程:" : data.course, "其他信息：" : data.other}],
+          // subjects: [{"姓名：" : data.name, "性别：" : data.gender, "民族：" : data.nation, "学历：" : data.graduated, "年龄：" : data.age, "出生日期：" : data.birthday, "联系方式：" : data.contact, "研究方向:" : data.direction}, {"指导项目及获奖情况：" : data.awards, "创新创业领域的经历结果和成就:" : data.achievement}, {"工作单位：" : data.organization, "职位:" : data.job, "职称：" : data.title, "毕业院校：" : data.graduated},{"专利：" : data.patent, "论文发表情况:" : data.papers}, {"公开场合发表演讲：" : data.speech, "教育经历:" : data.experience, "个人自媒体:" : data.media, "自建课程:" : data.course, "其他信息：" : data.other}],
+          subjects: [{"姓名：" : data.name, "学历：" : data.graduated, "联系方式：" : data.contact, "研究方向:" : data.direction}, {"指导项目及获奖情况：" : data.awards, "创新创业领域的经历结果和成就:" : data.achievement}, {"工作单位：" : data.organization, "职位:" : data.job, "职称：" : data.title, "毕业院校：" : data.graduated},{"专利：" : data.patent, "论文发表情况:" : data.papers}, {"公开场合发表演讲：" : data.speech, "教育经历:" : data.experience, "个人自媒体:" : data.media, "自建课程:" : data.course, "其他信息：" : data.other}],
         })
         self.setData({
           curSubject:self.data.subjects[0]
