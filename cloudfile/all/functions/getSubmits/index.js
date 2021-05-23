@@ -16,7 +16,8 @@ exports.main = async (event, context) => {
       "_id": true,
       "data": true,
       "state": true,
-      "updateDate": true
+      "updateDate": true,
+      "comment":true
     }).orderBy('state', 'asc').get()
     return [res.data, 3]
   } else if (event.mode == 1) {
