@@ -87,3 +87,16 @@
   font-size:small;
   color:grey
 }
+.desc{
+  font-size:small;
+  color:grey
+}
+.flex_col2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-left: 20rpx;
+  /* background-color: red; */
+  width: 480rpx;
+}

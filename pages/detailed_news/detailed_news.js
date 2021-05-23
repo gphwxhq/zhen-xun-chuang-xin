@@ -37,31 +37,6 @@ Page({
       params: params,
       title: title,
     })
-    let self = this
-    wx.cloud.callFunction({
-      name: functionName,
-      data: params,
-      success: function (res) {
-        if (res.result == null) {
-          console.log(res)
-          return
-        }
-        self.setData({
-          infoList: res.result[0]
-        })
-        if (res.result[0].length <res.result[1])
-          self.setData({
-            isFinish: true
-          })
-        // console.log(res)
-      },
-      fail: function (res) {
-        self.setData({
-          isEmpty: true
-        })
-        console.log(res)
-      }
-    })
   },
   // click_for_detail(e) {
   //   wx.navigateTo({
@@ -76,6 +51,68 @@ Page({
       url: '/pages/event/event?name=articles&url=' + url,
     })
   },
+  del_submit(e){
+    let self=this
+    console.log(e.currentTarget.dataset.id)
+    wx.cloud.callFunction({
+      name: "updateInfo",
+      //0提交，1草稿
+      data: {
+        mode:'2',
+        id:e.currentTarget.dataset.id
+      },
+      success: function (res) {
+        console.log(res)
+        wx.cloud.callFunction({
+          name: self.data.functionName,
+          data: self.data.params,
+          success: function (res) {
+            if (res.result == null) {
+              console.log(res)
+              return
+            }
+            self.setData({
+              infoList: res.result[0]
+            })
+            if(res.result[0].length==0){
+              self.setData({
+                isEmpty:true
+              })
+            }
+            if (res.result[0].length <res.result[1])
+              self.setData({
+                isFinish: true
+              })
+            console.log(res)
+          },
+          fail: function (res) {
+            self.setData({
+              isEmpty: true
+            })
+            console.log(res)
+          }
+        })
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+    
+  },
+  change_submit(e){
+    console.log(e.currentTarget.dataset.info)
+    wx.navigateTo({
+      url: '/pages/update_info/update_info?data='+JSON.stringify(e.currentTarget.dataset.info),
+    })
+  },
+  show_detail(e){
+    console.log(e)
+    wx.showModal({
+      title: '审核详情',
+      showCancel:false,
+      content: e.currentTarget.dataset.detail,
+    })    
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -87,7 +124,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let self = this
+    wx.cloud.callFunction({
+      name: self.data.functionName,
+      data: self.data.params,
+      success: function (res) {
+        if (res.result == null) {
+          console.log(res)
+          return
+        }
+        self.setData({
+          infoList: res.result[0]
+        })
+        if(res.result[0].length==0){
+          self.setData({
+            isEmpty:true
+          })
+        }
+        if (res.result[0].length <res.result[1])
+          self.setData({
+            isFinish: true
+          })
+        console.log(res)
+      },
+      fail: function (res) {
+        self.setData({
+          isEmpty: true
+        })
+        console.log(res)
+      }
+    })
   },
 
   /**

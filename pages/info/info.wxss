@@ -29,7 +29,7 @@ page {
   height: 200rpx;
 }
 
-.get_info {
+.r_btn {
   width: 25% !important;
   /* background-color: violet; */
 }
@@ -47,13 +47,42 @@ page {
   font-weight: bold;
   font-size: x-large;
 }
+#role{
+  padding-left: 40rpx;
+}
 
 .colLine {
   background: #c0c0c0;
   height: 100%;
   width: 5rpx;
 }
-
+.work {
+  display: flex;
+  width: 100%;
+  margin-top: 10rpx;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding-bottom: 5rpx;
+  /* height: 400rpx; */
+}
+.work_row{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.work_col{
+  display: flex;
+  /* padding-left: 10rpx; */
+  flex-direction: column;
+  align-items: center;
+}
+.work_col image{
+  /* background-color: red; */
+  width: 100rpx;
+  height: 80rpx;
+}
 .motto_area {
   display: flex;
   flex-direction: column;
@@ -118,8 +147,14 @@ page {
   background-color: white;
   border-top: solid #c0c0c0 1px;
 }
+.title_line{
+  /* padding-left: 20rpx; */
+  /* font-size: small; */
+  border-bottom: solid #c0c0c0 1px;
+  padding:10rpx;
+}
 .title{
-  padding-left: 20rpx;
+  /* padding-left: 20rpx; */
   /* font-size: small; */
   /* border-bottom: solid #c0c0c0 1px; */
   padding:10rpx;

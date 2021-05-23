@@ -1,0 +1,22 @@
+<!--pages/update_info/update_info.wxml-->
+<view class="tip" style="background-color:{{tipColor}}">{{tipInfo}}</view>
+<view class="body">
+  <view class="intro">如果您想将您的信息录入系统或者发现当前信息有误，您可以填写这张表单或将您的简历发往邮箱1315713642@qq.com，我们将在审核后将您的信息录入系统</view>
+  <form bindsubmit='submitInfo'>
+    <block wx:for="{{index}}" wx:key="*this" wx:for-index='key1'>
+      <view class="part">
+        <view class="title">{{item}}</view>
+        <view class="container">
+          <block wx:for="{{subjects[key1]}}" wx:key="*this" wx:for-index='key2' wx:for-item='item2'>
+            <view>{{key2}}</view>
+            <input name="{{item2}}" bindblur="checkState" data-id="{{item2}}" value="{{draft[item2]}}"></input>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view class="btn_container">
+      <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="0" type="primary">{{submitWorking?'提交中':'提交'}}</button>
+      <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="1">{{saveWorking?'保存中':'保存草稿'}}</button>
+    </view>
+  </form>
+</view>

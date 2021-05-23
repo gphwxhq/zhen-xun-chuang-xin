@@ -5,8 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hasUserInfo: false,
-
+    hasUserInfo: false
   },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
@@ -21,6 +20,27 @@ Page({
           hasUserInfo: true
         })
         this.showFadeinItem('.info')
+        let self=this
+        wx.cloud.callFunction({
+          name: "login",
+          data: {
+            nickName:res.userInfo.nickName,
+            avatar:res.userInfo.avatarUrl,
+            mode:1
+          },
+          success: function (res) {
+            // console.log(res)
+            //role:0.user 1.admin 2.teacher
+            self.setData({
+              id:res.result.id,
+              role:res.result.isRegist?res.result.role:0
+            })
+    
+          },
+          fail: function (res) {
+            console.log(res)
+          }
+        })
       },
       fail: (res) => {
         console.log(res)
@@ -28,6 +48,28 @@ Page({
       }
     })
     
+  },
+  jmp_manage(){
+    wx.navigateTo({
+      url: '/pages/manage/manage',
+    })
+  },
+  update_info(){
+    if(!this.data.hasUserInfo){
+      wx.showToast({
+        title: '请先登录',
+        icon: "none",
+      })
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/update_info/update_info',
+    })
+  },
+  check_info(){
+    wx.navigateTo({
+      url: '../detailed_news/detailed_news?title=申请列表&functionName=getSubmits&params={"mode":0}',
+    })
   },
   showFadeawayInfo(){
     this.animate('.info', [
@@ -68,6 +110,37 @@ Page({
    */
   onLoad: function (options) {
     this.getMotto()
+    let self=this
+    this.animate('.info', [
+      {opacity:1},
+      {opacity:0}
+      ], 500,function (params) {
+        wx.cloud.callFunction({
+          name: "login",
+          data: {
+            mode:0
+          },
+          success: function (res) {
+            // console.log(res)
+            if(res.result.isRegist){
+              self.setData({
+                id:res.result.id,
+                role:res.result.isRegist?res.result.role:0,
+                hasUserInfo: true,
+                userInfo:{
+                  avatarUrl:res.result.avatar,
+                  nickName:res.result.nickName
+                }
+              })
+            }
+            self.showFadeinItem('.info')
+          },
+          fail: function (res) {
+            console.log(res)
+          }
+        })
+      })
+    
   },
 
   /**

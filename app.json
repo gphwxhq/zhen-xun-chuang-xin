@@ -1,12 +1,14 @@
 {
   "pages": [
+    "pages/info/info",
+    "pages/update_info/update_info",
     "pages/index/index",
     "pages/details/details",
-    "pages/info/info",
     "pages/findmore/findmore",
     "pages/searchresult/searchresult",
     "pages/event/event",
-    "pages/detailed_news/detailed_news"
+    "pages/detailed_news/detailed_news",
+    "pages/manage/manage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -49,6 +51,6 @@
   },
   "usingComponents": {
     "image-loader": "/components/image-loader/image-loader",
-    "empty-item":"/components/empty-item/empty-item"
+    "empty-item": "/components/empty-item/empty-item"
   }
 }

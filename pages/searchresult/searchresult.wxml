@@ -7,7 +7,7 @@
         <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
         <input id="searchInput" name="search_item" focus="true" placeholder="{{mode==0?'导师姓名/领域/地区':'项目名称'}}" bindconfirm="searchBox"></input>
       </view>
-      <button check id="submitBtn" form-type="submit" disabled="{{!searchState}}">{{!searchState?'查询中':'查询'}}</button>
+      <button id="submitBtn" form-type="submit" disabled="{{!searchState}}">{{!searchState?'查询中':'查询'}}</button>
     </view>
   </form>
 </view>

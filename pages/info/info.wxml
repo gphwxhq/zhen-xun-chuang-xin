@@ -7,19 +7,40 @@
     <view class="name">
       <view class="welcome">你好,</view>
       <view id="name">{{hasUserInfo?userInfo.nickName:'陌生人'}}</view>
+      <view id="role" wx:if="{{hasUserInfo}}">{{role==0?'用户':role==1?'管理员':'老师'}}</view>
     </view>
-    <button wx:if="{{!hasUserInfo}}" class="get_info" bindtap="getUserProfile">登录</button>
+    <button wx:if="{{!hasUserInfo}}" class="r_btn" bindtap="getUserProfile">登录</button>
+    <button wx:if="{{role==1}}" class="r_btn" bindtap="jmp_manage">管理</button>
   </view>
-   <view class="motto_area">
+  <view class="motto_area">
     <view class="title">每日一句</view>
     <!--<view class="colLine"></view> -->
     <view class="motto_block">
       <view class="motto">{{motto}}</view>
     </view>
   </view>
+  <view class="work">
+    <view class="title_line">工作区</view>
+    <view class="work_row">
+      <view class="work_col" bindtap="update_info">
+        <image src="../../lib/images/tip_2.png" />
+        <view>导师入驻</view>
+      </view>
+      <view class="work_col" bindtap="check_info">
+        <image src="../../lib/images/tip_2.png" />
+        <view>查看申请</view>
+      </view>
+    </view>
+  </view>
   <view class="affair">
-      <view class="title">功能区</view>
-      <button class="row_button" open-type="openSetting"><image src="../../lib/images/setting.png"></image><view>授权设置</view></button>
-      <button class="row_button" open-type="feedback"> <image src="../../lib/images/feedback.png"></image><view>反馈</view></button>
+    <view class="title">功能区</view>
+    <button class="row_button" open-type="openSetting">
+      <image src="../../lib/images/setting.png"></image>
+      <view>授权设置</view>
+    </button>
+    <button class="row_button" open-type="feedback">
+      <image src="../../lib/images/feedback.png"></image>
+      <view>反馈</view>
+    </button>
   </view>
 </view>
