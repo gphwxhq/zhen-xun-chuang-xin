@@ -25,11 +25,11 @@
     <view class="title_line">工作区</view>
     <view class="work_row">
       <view class="work_col" bindtap="update_info">
-        <image src="../../lib/images/tip_2.png" />
+        <image src="/lib/images/join.png" />
         <view>导师入驻</view>
       </view>
       <view class="work_col" bindtap="check_info">
-        <image src="../../lib/images/tip_2.png" />
+        <image src="/lib/images/commit.png" />
         <view>查看申请</view>
       </view>
     </view>
@@ -45,7 +45,7 @@
       <view>反馈</view>
     </button>
     <button class="row_button" open-type="contact">
-      <image src="../../lib/images/feedback.png"></image>
+      <image src="/lib/images/support.png"></image>
       <view>联系客服</view>
     </button>
   </view>

@@ -49,6 +49,8 @@ page {
   padding-left: 20rpx;
   font-weight: bold;
   font-size: x-large;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #role{
   padding-left: 40rpx;
