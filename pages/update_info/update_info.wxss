@@ -41,13 +41,14 @@
   /* width: 100%; */
   color:grey;
   padding:10rpx;
+  font-size:larger;
 }
 input{
   border-bottom:  solid #c0c0c0 1px;
   width: 100%;
 }
 button{
-  width: 300rpx !important;
+  width: 235rpx !important;
 }
 .btn_container{
   display: flex;

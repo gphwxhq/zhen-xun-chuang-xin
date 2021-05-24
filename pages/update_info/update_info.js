@@ -8,7 +8,7 @@ Page({
     subjects: [{
       "姓名：(必填)": "name",
       "学历：": "graduated",
-      "联系方式：（必填）": "contact",
+      "联系方式：(必填)": "contact",
       "研究方向:": "direction",
       "照片链接": "photo"
     }, {
@@ -36,12 +36,14 @@ Page({
   },
   checkState(res) {
     // console.log(res)
-    if (res.currentTarget.dataset.id == "name" && res.detail.value == "")
-      // wx.showToast({
-      //   title: '姓名不能为空',
-      //   icon: 'error'
-      // })
-      this.showTip('姓名不能为空')
+    if (res.currentTarget.dataset.id == "name"){
+      if(res.detail.value == ""){
+        this.showTip('姓名不能为空')
+      }
+      else if (!(/^[\u4E00-\u9FA5A-Za-z]+$/.test(res.detail.value))) {
+        this.showTip('姓名不符合规则')
+      }
+    }
     else if (res.currentTarget.dataset.id == "contact" && res.detail.value == "")
       this.showTip('联系方式不能为空')
   },
@@ -80,13 +82,16 @@ Page({
     // console.log(res)
     let mlist = res.detail.value
     console.log(mlist)
-    if (mlist.name == "") {
-      this.showTip('姓名不能为空')
-      return
-    } else if (mlist.contact == "") {
-      this.showTip('联系方式不能为空')
-      return
+    if (res.currentTarget.dataset.id == "name"){
+      if(res.detail.value == ""){
+        this.showTip('姓名不能为空')
+      }
+      else if (!(/^[\u4E00-\u9FA5A-Za-z]+$/.test(res.detail.value))) {
+        this.showTip('姓名不符合规则')
+      }
     }
+    else if (res.currentTarget.dataset.id == "contact" && res.detail.value == "")
+      this.showTip('联系方式不能为空')
     this.setData({
       submitWorking: res.detail.target.dataset.type == 0 ? true : false,
       saveWorking: res.detail.target.dataset.type == 1 ? true : false
@@ -110,7 +115,7 @@ Page({
           saveWorking: false
         })
         if (res.result.success) {
-          let text=res.result.mode=='0'?'提交':'保存'
+          let text=res.result.mode=='0'||res.result.mode=='3'?'提交':'保存'
           wx.hideLoading({
             success: (res) => {
               self.setData({

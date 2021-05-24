@@ -67,6 +67,13 @@ Page({
     })
   },
   check_info(){
+    if(!this.data.hasUserInfo){
+      wx.showToast({
+        title: '请先登录',
+        icon: "none",
+      })
+      return
+    }
     wx.navigateTo({
       url: '../detailed_news/detailed_news?title=申请列表&functionName=getSubmits&params={"mode":0}',
     })

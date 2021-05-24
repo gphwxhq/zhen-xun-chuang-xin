@@ -1,5 +1,6 @@
 <!--pages/info/info.wxml-->
 <view class="main">
+<view class="info_container">
   <view class="info">
     <image-loader my-class="user_avatar" mode="scaleToFill"
       src="{{hasUserInfo?userInfo.avatarUrl:'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png'}}">
@@ -12,6 +13,7 @@
     <button wx:if="{{!hasUserInfo}}" class="r_btn" bindtap="getUserProfile">登录</button>
     <button wx:if="{{role==1}}" class="r_btn" bindtap="jmp_manage">管理</button>
   </view>
+</view>
   <view class="motto_area">
     <view class="title">每日一句</view>
     <!--<view class="colLine"></view> -->

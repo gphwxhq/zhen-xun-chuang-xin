@@ -10,10 +10,13 @@ page {
   justify-content: center;
   align-items: center;
 }
-
-.info {
+.info_container{
   width: 100%;
   background-color: #35A4FF;
+}
+.info {
+  /* width: 100%; */
+  /* background-color: #35A4FF; */
   display: flex;
   flex-direction: row;
   padding-top: 20rpx;
@@ -67,7 +70,7 @@ page {
   /* height: 400rpx; */
 }
 .work_row{
-  padding-top: 10rpx;
+  padding-top: 15rpx;
   padding-bottom: 10rpx;
   display: flex;
   justify-content: space-around;

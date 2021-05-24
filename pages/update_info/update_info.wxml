@@ -17,6 +17,7 @@
     <view class="btn_container">
       <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="0" type="primary">{{submitWorking?'提交中':'提交'}}</button>
       <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="1">{{saveWorking?'保存中':'保存草稿'}}</button>
+      <button form-type="reset" disabled="{{submitWorking||saveWorking}}"  type="warn">清空</button>
     </view>
   </form>
 </view>

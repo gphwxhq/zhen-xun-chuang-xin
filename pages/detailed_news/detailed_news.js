@@ -113,6 +113,11 @@ Page({
       content: e.currentTarget.dataset.detail,
     })    
   },
+  generateDate(mdate){
+    let minutes=mdate.getMinutes()>9?mdate.getMinutes():'0'+mdate.getMinutes()
+    let seconds=mdate.getSeconds()>9?mdate.getSeconds():'0'+mdate.getSeconds()
+    return mdate.getFullYear() + "-" + (mdate.getMonth() + 1) + "-" + mdate.getDate()+' '+mdate.getHours()+':'+minutes+':'+seconds;
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -133,6 +138,11 @@ Page({
           console.log(res)
           return
         }
+        let mlist=res.result[0]
+        mlist.forEach(function(item){
+          let mdate=new Date(item.updateDate)
+          item.updateDate=self.generateDate(mdate)
+        })
         self.setData({
           infoList: res.result[0]
         })

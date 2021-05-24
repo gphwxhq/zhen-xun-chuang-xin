@@ -96,7 +96,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  margin-left: 20rpx;
+  margin-left: 10rpx;
   /* background-color: red; */
   width: 480rpx;
 }
