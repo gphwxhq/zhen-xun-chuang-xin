@@ -44,5 +44,9 @@
       <image src="../../lib/images/feedback.png"></image>
       <view>反馈</view>
     </button>
+    <button class="row_button" open-type="contact">
+      <image src="../../lib/images/feedback.png"></image>
+      <view>联系客服</view>
+    </button>
   </view>
 </view>
