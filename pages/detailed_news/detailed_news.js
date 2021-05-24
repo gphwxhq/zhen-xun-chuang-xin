@@ -4,9 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLoading:false,
+    isLoading: false,
     isFinish: false,
-    isEmpty:false
+    isEmpty: false
   },
   click_for_detail(e) {
     wx.navigateTo({
@@ -14,8 +14,8 @@ Page({
     })
   },
   toarticles: function (e) {
-    let id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
-    let url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
+    let id = e.currentTarget.dataset.id; // 获取点击的推文的数组下标
+    let url = e.currentTarget.dataset.url; // 通过id判断是哪个推文的链接
     //跳转并传参
     wx.navigateTo({
       url: '/pages/event/event?name=articles&url=' + url,
@@ -27,7 +27,7 @@ Page({
   onLoad: function (options) {
     let functionName = options.functionName
     let params = JSON.parse(options.params)
-    let title=options.title
+    let title = options.title
     // console.log(params)
     wx.setNavigationBarTitle({
       title: title
@@ -44,25 +44,63 @@ Page({
   //   })
   // },
   toarticles: function (e) {
-    var id = e.currentTarget.dataset.id;  // 获取点击的推文的数组下标
-    var url = e.currentTarget.dataset.url;  // 通过id判断是哪个推文的链接
+    var id = e.currentTarget.dataset.id; // 获取点击的推文的数组下标
+    var url = e.currentTarget.dataset.url; // 通过id判断是哪个推文的链接
     //跳转并传参
     wx.navigateTo({
       url: '/pages/event/event?name=articles&url=' + url,
     })
   },
-  del_submit(e){
-    let self=this
+  showFadeawayText() {
+    this.animate('.flex_row', [{
+        opacity: 1
+      },
+      {
+        opacity: 0
+      }
+    ], 500)
+  },
+  showFadeinText() {
+    this.animate('.flex_row', [{
+        opacity: 0
+      },
+      {
+        opacity: 1
+      }
+    ], 500, function () {
+      this.clearAnimation('.flex_row', function () {
+        // console.log("清除了text_container上的动画")
+      })
+    }.bind(this))
+  },
+  del_submit(e) {
+    let self = this
     console.log(e.currentTarget.dataset.id)
+    this.setData({
+      isLoading: true,
+      ['params.pageNum']: 1,
+      isFinish: false
+    })
+    this.showFadeawayText()
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.cloud.callFunction({
       name: "updateInfo",
       //0提交，1草稿
       data: {
-        mode:'2',
-        id:e.currentTarget.dataset.id
+        mode: '2',
+        id: e.currentTarget.dataset.id
       },
       success: function (res) {
         console.log(res)
+        wx.hideLoading({
+          success: (res) => {
+            wx.showToast({
+              title: '成功',
+            })
+          },
+        })
         wx.cloud.callFunction({
           name: self.data.functionName,
           data: self.data.params,
@@ -71,15 +109,24 @@ Page({
               console.log(res)
               return
             }
-            self.setData({
-              infoList: res.result[0]
+            let mlist = res.result[0]
+
+            mlist.forEach(function (item) {
+              let mdate = new Date(item.updateDate)
+              item.updateDate = self.generateDate(mdate)
             })
-            if(res.result[0].length==0){
+
+            self.setData({
+              infoList: mlist,
+              isLoading: false
+            })
+            self.showFadeinText()
+            if (res.result[0].length == 0) {
               self.setData({
-                isEmpty:true
+                isEmpty: true
               })
             }
-            if (res.result[0].length <res.result[1])
+            if (res.result[0].length < res.result[1])
               self.setData({
                 isFinish: true
               })
@@ -97,26 +144,27 @@ Page({
         console.log(res)
       }
     })
-    
+
   },
-  change_submit(e){
+  change_submit(e) {
     console.log(e.currentTarget.dataset.info)
     wx.navigateTo({
-      url: '/pages/update_info/update_info?data='+JSON.stringify(e.currentTarget.dataset.info),
+      url: '/pages/update_info/update_info?data=' + JSON.stringify(e.currentTarget.dataset.info),
     })
   },
-  show_detail(e){
-    console.log(e)
-    wx.showModal({
-      title: '审核详情',
-      showCancel:false,
-      content: e.currentTarget.dataset.detail,
-    })    
+  show_detail(e) {
+    if (e.currentTarget.dataset.state != 0) {
+      wx.showModal({
+        title: '审核详情',
+        showCancel: false,
+        content: e.currentTarget.dataset.detail,
+      })
+    }
   },
-  generateDate(mdate){
-    let minutes=mdate.getMinutes()>9?mdate.getMinutes():'0'+mdate.getMinutes()
-    let seconds=mdate.getSeconds()>9?mdate.getSeconds():'0'+mdate.getSeconds()
-    return mdate.getFullYear() + "-" + (mdate.getMonth() + 1) + "-" + mdate.getDate()+' '+mdate.getHours()+':'+minutes+':'+seconds;
+  generateDate(mdate) {
+    let minutes = mdate.getMinutes() > 9 ? mdate.getMinutes() : '0' + mdate.getMinutes()
+    let seconds = mdate.getSeconds() > 9 ? mdate.getSeconds() : '0' + mdate.getSeconds()
+    return mdate.getFullYear() + "-" + (mdate.getMonth() + 1) + "-" + mdate.getDate() + ' ' + mdate.getHours() + ':' + minutes + ':' + seconds;
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -138,20 +186,22 @@ Page({
           console.log(res)
           return
         }
-        let mlist=res.result[0]
-        mlist.forEach(function(item){
-          let mdate=new Date(item.updateDate)
-          item.updateDate=self.generateDate(mdate)
-        })
-        self.setData({
-          infoList: res.result[0]
-        })
-        if(res.result[0].length==0){
-          self.setData({
-            isEmpty:true
+        let mlist = res.result[0]
+        if (self.data.title == '申请列表') {
+          mlist.forEach(function (item) {
+            let mdate = new Date(item.updateDate)
+            item.updateDate = self.generateDate(mdate)
           })
         }
-        if (res.result[0].length <res.result[1])
+        self.setData({
+          infoList: mlist
+        })
+        if (res.result[0].length == 0) {
+          self.setData({
+            isEmpty: true
+          })
+        }
+        if (res.result[0].length < res.result[1])
           self.setData({
             isFinish: true
           })
@@ -191,10 +241,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.isFinish)
-     return
+    if (this.data.isFinish)
+      return
     this.setData({
-      isLoading:true,
+      isLoading: true,
       ['params.pageNum']: this.data.params.pageNum + 1
     })
     // console.log(this.data.params.pageNum)
@@ -211,9 +261,16 @@ Page({
           self.setData({
             isFinish: true
           })
+        let mlist = res.result[0]
+        if (self.data.title == '申请列表') {
+          mlist.forEach(function (item) {
+            let mdate = new Date(item.updateDate)
+            item.updateDate = self.generateDate(mdate)
+          })
+        }
         self.setData({
-          infoList: self.data.infoList.concat(res.result[0]) ,
-          isLoading:false
+          infoList: self.data.infoList.concat(mlist),
+          isLoading: false
         })
         // console.log(res)
       },

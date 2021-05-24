@@ -75,7 +75,7 @@ Page({
       return
     }
     wx.navigateTo({
-      url: '../detailed_news/detailed_news?title=申请列表&functionName=getSubmits&params={"mode":0}',
+      url: '../detailed_news/detailed_news?title=申请列表&functionName=getSubmits&params={"mode":0,"pageNum":1}',
     })
   },
   showFadeawayInfo(){

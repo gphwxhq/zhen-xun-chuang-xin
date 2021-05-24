@@ -10,6 +10,8 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
   if (event.mode == 0) {
+    let pageInterval = 13
+    let mskip = event.pageNum > 1 ? (event.pageNum - 1) * pageInterval : 0
     let res = await db.collection("submits").where({
       _openid: wxContext.OPENID,
     }).field({
@@ -18,8 +20,8 @@ exports.main = async (event, context) => {
       "state": true,
       "updateDate": true,
       "comment":true
-    }).orderBy('state', 'asc').get()
-    return [res.data, 3]
+    }).orderBy('state', 'asc').orderBy('updateDate', 'desc').limit(pageInterval).skip(mskip).get()
+    return [res.data, pageInterval]
   } else if (event.mode == 1) {
     try {
       let res = await db.collection("users").doc(wxContext.OPENID).field({
