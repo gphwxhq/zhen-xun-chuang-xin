@@ -22,7 +22,7 @@
       <view class="flex_col2">
         <view>{{item.data.name}}</view>
         <view class="desc">提交时间：{{item.updateDate}}</view> 
-        <view class="desc">状态：{{item.state==0?'审核中':item.state==1?'已通过':'已拒绝'}}</view>
+        <view class="desc">状态：<text style="color:{{item.state==0?'grey':item.state==1?'green':'red'}}">{{item.state==0?'审核中':item.state==1?'已通过':'已拒绝'}}</text></view>
       </view>
       <button catchtap="change_submit" data-info="{{item}}" wx:if="{{item.state==0}}" type="primary" size="mini">修改</button>
       <button catchtap="del_submit" data-id="{{item._id}}" wx:if="{{item.state==0}}" type="warn" size="mini">删除</button>

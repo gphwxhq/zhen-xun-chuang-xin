@@ -82,16 +82,18 @@ Page({
     // console.log(res)
     let mlist = res.detail.value
     console.log(mlist)
-    if (res.currentTarget.dataset.id == "name"){
-      if(res.detail.value == ""){
-        this.showTip('姓名不能为空')
-      }
-      else if (!(/^[\u4E00-\u9FA5A-Za-z]+$/.test(res.detail.value))) {
-        this.showTip('姓名不符合规则')
-      }
+    if(mlist.name == ""){
+      this.showTip('姓名不能为空')
+      return
     }
-    else if (res.currentTarget.dataset.id == "contact" && res.detail.value == "")
+    else if (!(/^[\u4E00-\u9FA5A-Za-z]+$/.test(mlist.name))) {
+      this.showTip('姓名不符合规则')
+      return
+    }
+    else if (mlist.contact== ""){
       this.showTip('联系方式不能为空')
+      return
+    }
     this.setData({
       submitWorking: res.detail.target.dataset.type == 0 ? true : false,
       saveWorking: res.detail.target.dataset.type == 1 ? true : false
