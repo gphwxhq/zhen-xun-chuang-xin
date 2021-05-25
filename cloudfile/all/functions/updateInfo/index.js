@@ -48,7 +48,8 @@ exports.main = async (event, context) => {
       .update({
         data: {
          data: event.info,
-         updateDate: new Date()
+         updateDate: new Date(),
+         state:0
         },
       })
   }

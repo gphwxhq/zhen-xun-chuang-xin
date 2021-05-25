@@ -218,6 +218,10 @@ Page({
   onShow: function () {
     if (this.data.title != '申请列表')
       return
+    this.setData({
+      ['params.pageNum']: 1,
+      isFinish: false
+    })
     let self = this
     wx.cloud.callFunction({
       name: self.data.functionName,
