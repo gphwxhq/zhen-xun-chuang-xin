@@ -37,6 +37,45 @@ Page({
       params: params,
       title: title,
     })
+    if (title != '申请列表') {
+      let self = this
+      wx.cloud.callFunction({
+        name: self.data.functionName,
+        data: self.data.params,
+        success: function (res) {
+          if (res.result == null) {
+            console.log(res)
+            return
+          }
+          let mlist = res.result[0]
+          if (self.data.title == '申请列表') {
+            mlist.forEach(function (item) {
+              let mdate = new Date(item.updateDate)
+              item.updateDate = self.generateDate(mdate)
+            })
+          }
+          self.setData({
+            infoList: mlist
+          })
+          if (res.result[0].length == 0) {
+            self.setData({
+              isEmpty: true
+            })
+          }
+          if (res.result[0].length < res.result[1])
+            self.setData({
+              isFinish: true
+            })
+          console.log(res)
+        },
+        fail: function (res) {
+          self.setData({
+            isEmpty: true
+          })
+          console.log(res)
+        }
+      })
+    }
   },
   // click_for_detail(e) {
   //   wx.navigateTo({
@@ -177,6 +216,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (this.data.title != '申请列表')
+      return
     let self = this
     wx.cloud.callFunction({
       name: self.data.functionName,
