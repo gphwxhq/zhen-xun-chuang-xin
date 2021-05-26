@@ -24,7 +24,7 @@
       <block wx:for='{{curSubject}}' wx:for-index='key' wx:key="*this">
         <view class="grid_row">
           <view class="information_l">{{key}}</view>
-          <view class="information_r">{{item}}</view>
+          <text class="information_r">{{item}}</text>
         </view>
       </block>
     </view>
