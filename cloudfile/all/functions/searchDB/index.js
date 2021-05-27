@@ -15,6 +15,7 @@ exports.main = async (event, context) => {
     var res = await db.collection("teachers").field({
       "name": true,
       "organization": true,
+      "direction":true,
       "_id": true,
       "link": true
     }).where(db.command.or([{
@@ -46,6 +47,7 @@ exports.main = async (event, context) => {
       "name": true,
       "organization": true,
       "_id": true,
+      "direction":true,
       "link": true
     }).where({
       "area": event.province

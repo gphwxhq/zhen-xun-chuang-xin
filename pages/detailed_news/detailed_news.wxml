@@ -15,6 +15,7 @@
       <view class="flex_col">
         <view>{{item.name}}</view> 
         <view class="detail">{{item.organization}}</view>
+        <view class="detail">{{item.direction}}</view>
       </view>
       <!-- </view> -->
     </view>

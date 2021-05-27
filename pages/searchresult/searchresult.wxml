@@ -5,7 +5,7 @@
     <view class="searchBlock">
       <view class="searchInput">
         <image src='../../lib/images/guanbi.png' style="width:50rpx;height:50rpx" mode="aspectFit"></image>
-        <input id="searchInput" name="search_item" focus="true" placeholder="{{mode==0?'导师姓名/领域/地区':'项目名称'}}" bindconfirm="searchBox"></input>
+        <input id="searchInput" name="search_item" focus="true" placeholder="{{mode==0?'导师姓名/领域/省份':'项目名称/届'}}" bindconfirm="searchBox"></input>
       </view>
       <button id="submitBtn" form-type="submit" disabled="{{!searchState}}">{{!searchState?'查询中':'查询'}}</button>
     </view>
@@ -32,6 +32,7 @@
           <view class="flex_col">
             <view>{{item.name}}</view> 
             <view class="detail">{{item.organization}}</view>
+            <view class="detail">{{item.direction}}</view>
           </view>
         </view>
         <!-- <view class="divLine"></view> -->
