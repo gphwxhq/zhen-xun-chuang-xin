@@ -35,6 +35,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isSwitching:false,
     isError:false,
     buttons: [{
       id: 0,
@@ -133,7 +134,7 @@ Page({
       {height:'210rpx'},
       {height:'250rpx'},
       {height:'240rpx'}
-      ], 500, function () {
+      ], 300, function () {
         this.clearAnimation('.checked_button', function () {
           // console.log("清除了checked_button上的动画")
         })
@@ -143,7 +144,7 @@ Page({
     this.animate('.text_container', [
       {opacity:1},
       {opacity:0}
-      ], 500, function () {
+      ], 300, function () {
         this.setData({
           curSubject:this.data.subjects[id]
         })
@@ -153,13 +154,16 @@ Page({
     this.animate('.text_container', [
       {opacity:0},
       {opacity:1}
-      ], 500, function () {
+      ], 300, function () {
         this.clearAnimation('.text_container', function () {
-          // console.log("清除了text_container上的动画")
-        })
+          this.isSwitching=false
+        }.bind(this))
     }.bind(this))
   },
   radioButtonTap(e) {
+    if(this.isSwitching)
+    return
+    this.isSwitching=true
     let id=e.currentTarget.dataset.id
     this.checkOff()
     this.data.buttons[id].checked = true;
