@@ -17,7 +17,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    letters: ['热门', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+    letters: ['HOT', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
     citys: [], //增加属性
     toView: ''
   },
@@ -102,9 +102,9 @@ Component({
     },
     selectcity: function(e) {
       // var orgid = e.currentTarget.dataset.orgid
-      // var orgname = e.currentTarget.dataset.orgname
+      let orgname = e.currentTarget.dataset.orgname
       wx.navigateTo({
-        url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"' + e.currentTarget.dataset.orgname + '","pageNum":1}',
+        url: '../detailed_news/detailed_news?title='+orgname+'导师&functionName=searchDB&params={"province":"' + orgname + '","pageNum":1}',
       })
     }
   },

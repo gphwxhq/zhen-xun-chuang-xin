@@ -8,7 +8,17 @@
       <image-loader my-class='image' src='{{item.picture}}' mode='scaleToFill'></image-loader>
       <view class='containerText'>{{item.title}}</view>
     </view>
-    <view wx:if="{{title=='导师信息'}}" class='flex_row' bindtap='click_for_detail' data-id='{{item._id}}'>
+    <view wx:elif="{{title=='申请列表'}}" class='flex_row' bindtap="show_detail"data-state="{{item.state}}" data-detail="{{item.comment}}">
+      <view class="flex_col2">
+        <view>{{item.data.name}}</view>
+        <view class="desc">提交时间：{{item.updateDate}}</view> 
+        <view class="desc">状态：<text style="color:{{item.state==0?'grey':item.state==1?'green':'red'}}">{{item.state==0?'审核中':item.state==1?'已通过':'已拒绝'}}</text></view>
+      </view>
+      <button catchtap="change_submit" data-info="{{item}}" type="primary" size="mini">{{item.state==0?"修改":"再次提交"}}</button>
+      <button catchtap="del_submit" data-id="{{item._id}}" wx:if="{{item.state==0}}" type="warn" size="mini">删除</button>
+      <!-- </view> -->
+    </view>
+    <view wx:else class='flex_row' bindtap='click_for_detail' data-id='{{item._id}}'>
       <image-loader my-class="teacher_img"
         src="{{item.link==''?'cloud://main-2gjpci0p59828101.6d61-main-2gjpci0p59828101-1305705970/photo/default.png':item.link}}"
         mode="scaleToFill"></image-loader>
@@ -17,16 +27,6 @@
         <view class="detail">{{item.organization}}</view>
         <view class="detail">{{item.direction}}</view>
       </view>
-      <!-- </view> -->
-    </view>
-    <view wx:if="{{title=='申请列表'}}" class='flex_row' bindtap="show_detail"data-state="{{item.state}}" data-detail="{{item.comment}}">
-      <view class="flex_col2">
-        <view>{{item.data.name}}</view>
-        <view class="desc">提交时间：{{item.updateDate}}</view> 
-        <view class="desc">状态：<text style="color:{{item.state==0?'grey':item.state==1?'green':'red'}}">{{item.state==0?'审核中':item.state==1?'已通过':'已拒绝'}}</text></view>
-      </view>
-      <button catchtap="change_submit" data-info="{{item}}" type="primary" size="mini">{{item.state==0?"修改":"再次提交"}}</button>
-      <button catchtap="del_submit" data-id="{{item._id}}" wx:if="{{item.state==0}}" type="warn" size="mini">删除</button>
       <!-- </view> -->
     </view>
   </block>

@@ -120,7 +120,7 @@ Page({
     if (!this.data.isGetProvince)
       return
     wx.navigateTo({
-      url: '../detailed_news/detailed_news?title=导师信息&functionName=searchDB&params={"province":"' + this.data.province + '","pageNum":1}',
+      url: '../detailed_news/detailed_news?title='+this.data.province+'导师&functionName=searchDB&params={"province":"' + this.data.province + '","pageNum":1}',
     })
   },
   to_tip_1(e) {
