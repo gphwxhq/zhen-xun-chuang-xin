@@ -1,0 +1,2 @@
+<!--components/comm-dialog/comm-dialog.wxml-->
+<view class='letter-text' wx:if="{{isShow}}">{{letter}}</view>

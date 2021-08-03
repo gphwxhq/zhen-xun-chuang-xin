@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "selector": "/components/selector/selector"
+  },
   "navigationBarBackgroundColor":"#35A4FF",
   "navigationBarTextStyle":"white"
 }

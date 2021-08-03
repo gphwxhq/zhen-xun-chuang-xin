@@ -1,0 +1,4 @@
+{
+  "component": true,
+  "usingComponents": {"dialog": "/components/comm-dialog/comm-dialog"}
+}

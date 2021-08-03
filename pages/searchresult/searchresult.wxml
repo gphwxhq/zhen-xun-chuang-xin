@@ -24,6 +24,7 @@
       <!-- <view style="color:grey">未找到结果</view> -->
     <!-- </view> -->
     <empty-item active="{{!isFind&&searchState&&!firstState}}"></empty-item>
+    <selector wx:if="{{firstState}}"></selector>
     <block wx:for="{{resultList}}" wx:key="_id" wx:if="{{isFind&&searchState}}">
       <view wx:if="{{mode==0}}" class='text_container' bindtap='click_for_detail' data-id='{{item._id}}'>
         <view class='flex_row'>

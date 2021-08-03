@@ -1,0 +1,24 @@
+<!--components/selector/selector.wxml-->
+<view class='out-content'>
+  <!-- //增加scroll-into-view属性 -->
+  <scroll-view scroll-y='true' class='city-scroll' scroll-with-animation='true' scroll-into-view="{{toView}}">
+    <view class='city-content'>
+      <!-- //增加id用来做联动，定位特殊处理 -->
+      <view class='location-city-title' id='dw'>热门城市</view>
+      <view class='location-parent'>
+        <view class='location-city' bindtap='selectcity' data-orgname='北京市'>北京市</view>
+        <view class='location-city' bindtap='selectcity' data-orgname='天津市'>天津市</view>
+      </view>
+      <view wx:for='{{citys}}' wx:key='orgId' class='city-item' bindtap='selectcity' data-orgname='{{item.name}}'>
+        <!-- //增加id用来做联动 -->
+        <text class='city-letter' wx:if='{{item.isshowletter}}' id='{{item.simplepinyin}}'>{{item.simplepinyin}}</text>
+        <text class='city-name'>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='right' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' id='right'>
+    <view wx:for="{{letters}}" wx:key="*this" class='letter' bindtap='letterclick' data-letter="{{item}}">{{item}}</view>
+  </view>
+  <dialog id='dialog'>
+  </dialog>
+</view>
