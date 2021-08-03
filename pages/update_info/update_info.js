@@ -5,12 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    photoList:[],
     subjects: [{
       "姓名：(必填)": "name",
       "学历：": "graduated",
       "联系方式：(必填)": "contact",
       "研究方向:": "direction",
-      "照片链接": "photo"
+      // "照片链接": "link"
     }, {
       "指导项目及获奖情况：": "awards",
       "创新创业领域的经历结果和成就:": "achievement"
@@ -32,7 +33,49 @@ Page({
     index: ['基本信息', '项目经历', '职位信息', '论文及专利', '其他信息'],
     saveWorking: false,
     submitWorking: false,
-    tipColor: 'red'
+    tipColor: 'red',
+    success:false
+  },
+  handleUpload(res){
+    // console.log(res)
+    let self=this
+    console.log(this.data.photoList)
+    if(this.data.photoList.length>0&&this.data.photoList[0].slice(0,5)=='cloud'&&res.detail.uploaderList.length==0){
+      wx.cloud.deleteFile({
+        fileList: self.data.photoList,
+        success: res => {
+          // handle success
+          console.log(res.fileList)
+
+          wx.cloud.callFunction({
+            name: "updateInfo",
+            //0提交，1草稿,2删除,3更新
+            data: {
+              mode: 1,
+              info: {
+                link:''
+              },
+              id:null
+            },
+            success: function (res) {
+              self.setData({
+                photoList:[]
+              })
+            },
+            fail: function (res) {
+              console.log(res)
+            }
+          })
+        },
+        fail: err => {
+          console.log(err)
+        },
+      })
+    }
+    else
+    self.setData({
+      photoList:res.detail.uploaderList
+    })
   },
   checkState(res) {
     // console.log(res)
@@ -58,7 +101,7 @@ Page({
       {
         opacity: 1
       }
-    ], 500, function () {
+    ], 200, function () {
       setTimeout(function () {
         self.animate('.tip', [{
             opacity: 1
@@ -66,7 +109,7 @@ Page({
           {
             opacity: 0
           }
-        ], 500, function () {
+        ], 200, function () {
           self.clearAnimation('.tip', function () {
             if (self.data.tipColor != 'red')
               self.setData({
@@ -77,6 +120,22 @@ Page({
         })
       }, time)
     })
+  },
+  async doUpload(mlist){
+    let self=this
+    console.log(self.data.photoList,self.data.photoList.length>0&&self.data.photoList[0].slice(0,5)!='cloud')
+    if(self.data.photoList.length>0&&self.data.photoList[0].slice(0,5)!='cloud'){
+       let res=await wx.cloud.uploadFile({
+        cloudPath: "upload/" + self.data.photoList[0].split('/')[3],
+        filePath: self.data.photoList[0], // 文件路径
+      })
+        // get resource ID
+        console.log(res)
+        mlist['link']= res.fileID
+    }
+    else
+      mlist['link']=''
+    return mlist
   },
   submitInfo(res) {
     // console.log(res)
@@ -102,44 +161,54 @@ Page({
       title: '提交中',
     })
     let self = this
-    console.log(this.data.id)
-    wx.cloud.callFunction({
-      name: "updateInfo",
-      //0提交，1草稿,2删除,3更新
-      data: {
-        mode: res.detail.target.dataset.type==0?self.data.mode==0?0:3:1,
-        info: mlist,
-        id:self.data.id
-      },
-      success: function (res) {
-        self.setData({
-          submitWorking: false,
-          saveWorking: false
-        })
-        if (res.result.success) {
-          let text=res.result.mode=='0'||res.result.mode=='3'?'提交':'保存'
-          wx.hideLoading({
-            success: (res) => {
-              self.setData({
-                tipColor:'green'
-              })
-              self.showTip(text+'成功')
-            },
+    let ress=res
+    this.doUpload(mlist).then(res => {
+      console.log(res)
+      wx.cloud.callFunction({
+        name: "updateInfo",
+        //0提交，1草稿,2删除,3更新
+        data: {
+          mode: ress.detail.target.dataset.type==0?self.data.mode==0?0:3:1,
+          info: res,
+          id:self.data.id
+        },
+        success: function (res) {
+          self.setData({
+            submitWorking: false,
+            saveWorking: false
           })
-        } else {
-          wx.hideLoading({
-            success: (res) => {
-              self.showTip('提交失败，每个账号至多存在3个申请')
-            },
-          })
+          if (res.result.success) {
+            let text=res.result.mode=='0'||res.result.mode=='3'?'提交':'保存'
+            wx.hideLoading({
+              success: (res) => {
+                self.setData({
+                  tipColor:'green'
+                })
+                self.showTip(text+'成功')
+                if(text=='提交'){
+                  self.setData({
+                  success:true
+                })
+                }
+              },
+            })
+          } else {
+            wx.hideLoading({
+              success: (res) => {
+                self.showTip('提交失败，每个账号至多存在3个申请')
+              },
+            })
+          }
+  
+          console.log(res)
+        },
+        fail: function (res) {
+          console.log(res)
         }
-
-        console.log(res)
-      },
-      fail: function (res) {
-        console.log(res)
-      }
-    })
+      })
+  })　
+    
+    
   },
   getDraft() {
     let self = this
@@ -153,9 +222,10 @@ Page({
         console.log(res)
         self.setData({
           mode:0,
-          draft: res.result
+          draft: res.result,
+          photoList:!res.result.link||res.result.link==''?[]:[res.result.link]
         })
-        console.log(self.data.draft)
+        console.log(self.data.draft,self.data.photoList)
       },
       fail: function (res) {
         console.log(res)
@@ -175,6 +245,7 @@ Page({
       this.setData({
         id:d._id,
         draft:d.data,
+        photoList:!d.data.link||d.data.link==''?[]:[d.data.link],
         mode:1
       })
     }

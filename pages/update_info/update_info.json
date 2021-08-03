@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "uploader": "/components/uploader/uploader"
+  },
   "navigationBarTitleText":"导师入驻",
   "navigationBarBackgroundColor":"#35A4FF",
   "navigationBarTextStyle":"white"

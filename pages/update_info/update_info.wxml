@@ -1,7 +1,15 @@
 <!--pages/update_info/update_info.wxml-->
 <view class="tip" style="background-color:{{tipColor}}">{{tipInfo}}</view>
-<view class="body">
+<view class="success_info" wx:if="{{success}}">
+<icon type="success" size="200rpx"></icon>
+<view>成功</view>
+</view>
+<view class="body" wx:else>
   <view class="intro">如果您想将您的信息录入系统或者发现当前信息有误，您可以填写这张表单或将您的简历发往邮箱1315713642@qq.com，我们将在审核后将您的信息录入系统</view>
+  <view class="part">
+    <view class="title">上传头像</view>
+    <uploader uploaderList="{{photoList}}" bind:getUploaderList="handleUpload"></uploader>
+  </view>
   <form bindsubmit='submitInfo'>
     <block wx:for="{{index}}" wx:key="*this" wx:for-index='key1'>
       <view class="part">
@@ -15,9 +23,11 @@
       </view>
     </block>
     <view class="btn_container">
-      <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="0" type="primary">{{submitWorking?'提交中':'提交'}}</button>
-      <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="1">{{saveWorking?'保存中':'保存草稿'}}</button>
-      <button form-type="reset" disabled="{{submitWorking||saveWorking}}"  type="warn">清空</button>
+      <button form-type="submit" disabled="{{submitWorking||saveWorking}}" data-type="0"
+        type="primary">{{submitWorking?'提交中':'提交'}}</button>
+      <button form-type="submit" disabled="{{submitWorking||saveWorking}}"
+        data-type="1">{{saveWorking?'保存中':'保存草稿'}}</button>
+      <button form-type="reset" disabled="{{submitWorking||saveWorking}}" type="warn">清空</button>
     </view>
   </form>
 </view>
