@@ -32,6 +32,12 @@ exports.main = async (event, context) => {
         comment:''
       }
     })
+    await db.collection('users').doc(wxContext.OPENID)
+      .update({
+        data: {
+         'draft.link':''
+        },
+      })
   }
   else if(event.mode=='1'){
     event.info['updateTime']=new Date()
@@ -42,7 +48,17 @@ exports.main = async (event, context) => {
         },
       })
   }else if(event.mode=='2'){
+    let data=await db.collection('submits').doc(event.id).field({
+      "data": true
+    }).get()
+    data=data.data.data.link
     await db.collection('submits').doc(event.id).remove()
+    if(data!=null&&data!=""&&data.slice(0,5)=='cloud'){
+      const fileIDs = [data]
+      await cloud.deleteFile({
+      fileList: fileIDs,
+      })
+    }
   }else if(event.mode=='3'){
     await db.collection('submits').doc(event.id)
       .update({
